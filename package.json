@@ -1,0 +1,12 @@
+{
+  "name": "boilerplate-bootstrap-4",
+  "version": "1.0.0",
+  "description": "Boilerplate for Bootstrap 4 projects",
+  "devDependencies": {
+    "grunt": "^1.1.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-sass": "^3.1.0",
+    "load-grunt-tasks": "^5.1.0",
+    "node-sass": "^4.14.1"
+  }
+}

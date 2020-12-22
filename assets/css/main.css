@@ -18,3 +18,10 @@ p {
 .page-header {
   margin-bottom: 40px;
 }
+
+.page-banner {
+  border: 1px dashed white;
+  height: 100vh;
+  background-image: url("../images/darkforest-2000px.jpg");
+  background-position: center;
+}

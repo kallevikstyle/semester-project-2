@@ -52,4 +52,5 @@ body .logo {
 
 .page-banner__blurb span {
   font-size: 2rem;
+  border-bottom: 1px dashed #E0CA02;
 }

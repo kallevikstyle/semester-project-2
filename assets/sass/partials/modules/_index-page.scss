@@ -14,8 +14,14 @@
     &__blurb {
         // @include dummyBorder(green);
         text-align: center;
+        font-size: 1.3rem;
         margin-top: 40px;
         max-width: 650px;
         margin-left: 20%;
+
+        span {
+            font-size: 2rem;
+            // color: $col-highlight;
+        }
     }
 }

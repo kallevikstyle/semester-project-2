@@ -13,6 +13,7 @@ body h1 {
 
 body p {
   font-family: 'Oswald';
+  font-weight: 300;
 }
 
 body .logo {
@@ -43,7 +44,12 @@ body .logo {
 
 .page-banner__blurb {
   text-align: center;
+  font-size: 1.3rem;
   margin-top: 40px;
   max-width: 650px;
   margin-left: 20%;
+}
+
+.page-banner__blurb span {
+  font-size: 2rem;
 }

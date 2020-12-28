@@ -3,13 +3,19 @@
     background-image: url('../images/darkforest-2000px.jpg');
     background-position: center;
     padding-top: 80px;
-
-    .logo {
-        // border: 1px dashed yellow;
-        margin-left: 100px;
-        background-image: url('../images/logo.svg');
-        background-repeat: no-repeat;
-        width: auto;
+    &__title {
+        position: absolute;
+        left: -1000px;
+     }
+    &__logo {
+        margin-left: 10%;
         height: 120px;
+    }
+    &__blurb {
+        // @include dummyBorder(green);
+        text-align: center;
+        margin-top: 40px;
+        max-width: 650px;
+        margin-left: 20%;
     }
 }

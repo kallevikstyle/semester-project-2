@@ -6,13 +6,18 @@ body {
   color: #F0F0F0;
 }
 
-h1 {
+body h1 {
   font-family: Cinzel;
   font-weight: 400;
 }
 
-p {
+body p {
   font-family: 'Oswald';
+}
+
+body .logo {
+  background-image: url("../images/logo.svg");
+  background-repeat: no-repeat;
 }
 
 .page-header {
@@ -26,10 +31,19 @@ p {
   padding-top: 80px;
 }
 
-.page-banner .logo {
-  margin-left: 100px;
-  background-image: url("../images/logo.svg");
-  background-repeat: no-repeat;
-  width: auto;
+.page-banner__title {
+  position: absolute;
+  left: -1000px;
+}
+
+.page-banner__logo {
+  margin-left: 10%;
   height: 120px;
+}
+
+.page-banner__blurb {
+  text-align: center;
+  margin-top: 40px;
+  max-width: 650px;
+  margin-left: 20%;
 }

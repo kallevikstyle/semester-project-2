@@ -1,11 +1,19 @@
 body {
     background-color: $col-background;
     color: $col-copy;
+
+    h1 {
+        font-family: Cinzel;
+        font-weight: 400;
+    }
+    p {
+        font-family: 'Oswald';
+    }
+    .logo {
+        background-image: url('../images/logo.svg');
+        background-repeat: no-repeat;
+    }
+
 }
-h1 {
-    font-family: Cinzel;
-    font-weight: 400;
-}
-p {
-    font-family: 'Oswald';
-}
+
+

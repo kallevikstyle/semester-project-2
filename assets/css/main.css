@@ -54,3 +54,13 @@ body .logo {
   font-size: 2rem;
   border-bottom: 1px dashed #E0CA02;
 }
+
+.page-banner__banner-img {
+  max-width: 1200px;
+  height: 300px;
+  margin: 0 auto;
+  background-image: url("../images/banner-img-1200px.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}

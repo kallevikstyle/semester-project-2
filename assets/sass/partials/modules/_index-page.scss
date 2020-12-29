@@ -1,3 +1,28 @@
+.dummyContent {
+    height: 400px;
+    background-color: grey;
+}
+.start-menu {
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    width: 100%;
+    height: $start-menu-height;
+    @include dummyBorder(pink);
+
+    &__nav {
+        @include dummyBorder($yellow)
+        padding-left: 0;
+        position: absolute;
+        bottom: 0;
+        // display: inline-block;
+
+        .nav-item {
+            display: inline;
+        }
+
+    }
+}
 .page-banner {
     height: 100vh;
     background-image: url('../images/darkforest-2000px.jpg');

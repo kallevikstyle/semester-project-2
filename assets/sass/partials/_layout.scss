@@ -3,18 +3,28 @@ body {
     color: $col-copy;
 
     h1 {
-        font-family: Cinzel;
+        font-family: $font-brand;
         font-weight: 400;
     }
     p {
-        font-family: 'Oswald';
+        font-family: $font-copy;
         font-weight: 300;
     }
     .logo {
         background-image: url('../images/logo.svg');
         background-repeat: no-repeat;
     }
-
+    ul {
+        margin: 0;
+    }
 }
 
+// Buttons
+.btn {
+    font-family: $font-brand;
+}
+.btn-light {
+    background-color: $col-highlight;
+    border: none;
+}
 

@@ -8,19 +8,40 @@
     bottom: 0;
     width: 100%;
     height: $start-menu-height;
-    @include dummyBorder(pink);
+    // @include dummyBorder(pink);
 
     &__nav {
-        @include dummyBorder($yellow)
+        // @include dummyBorder($yellow)
         padding-left: 0;
         position: absolute;
-        bottom: 0;
-        // display: inline-block;
+        // Make sure play button is at center
+        left: 50%;
+        margin-left: -($start-menu-height);
+        bottom: -($start-menu-height);
 
         .nav-item {
             display: inline;
         }
+    }
+    &__play {
+        // position: relative;
+        width: $start-menu-height*2;
+        height: $start-menu-height*2;
+        // width: 180px;
+        // height: 180px;
+        border-radius: 50%;
 
+        span {
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: $start-menu-height/2;
+        }
+    }
+    &__instructions {
+        margin-left: 20px;
+        position: relative;
+        top: -($start-menu-height/5);
     }
 }
 .page-banner {

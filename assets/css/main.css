@@ -47,6 +47,8 @@ body ul {
   position: fixed;
   z-index: 10;
   bottom: 0;
+  left: 50%;
+  margin-left: -100px;
   height: 100px;
 }
 
@@ -59,7 +61,6 @@ body ul {
 }
 
 .start-menu__play {
-  display: block;
   margin: 0 auto;
   width: 200px;
   height: 200px;
@@ -76,8 +77,7 @@ body ul {
 .start-menu__instructions {
   background-color: #21211E;
   border-color: #717070;
-  position: relative;
-  top: 58px;
+  margin-top: -46px;
 }
 
 .page-banner {

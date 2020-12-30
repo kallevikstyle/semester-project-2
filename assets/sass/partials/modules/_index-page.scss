@@ -6,29 +6,25 @@
     position: fixed;
     z-index: 10;
     bottom: 0;
-    width: 100%;
+    // width: 100%;
     height: $start-menu-height;
     // @include dummyBorder(pink);
 
     &__nav {
         // @include dummyBorder($yellow)
         padding-left: 0;
-        position: absolute;
-        // Make sure play button is at center
-        left: 50%;
-        margin-left: -($start-menu-height);
-        bottom: -($start-menu-height);
-
+        
         .nav-item {
             display: inline;
         }
     }
     &__play {
-        // position: relative;
+        display: block;
+        margin: 0 auto;
         width: $start-menu-height*2;
         height: $start-menu-height*2;
-        // width: 180px;
-        // height: 180px;
+        // width: 240px;
+        // height: 240px;
         border-radius: 50%;
 
         span {
@@ -39,9 +35,11 @@
         }
     }
     &__instructions {
-        margin-left: 20px;
+        background-color: $col-background;
+        border-color: darken($col-copy, 50%);
+        // margin-left: -($start-menu-height);
         position: relative;
-        top: -($start-menu-height/5);
+        top: ($start-menu-height/2)+8px;
     }
 }
 .page-banner {

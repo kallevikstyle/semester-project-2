@@ -1,0 +1,9 @@
+.character-select {
+    // @include dummyBorder(yellow);
+    border: 1px solid $col-copy;
+    border-radius: 5px;
+    margin-top: 0;
+    height: 100vh;
+    background-color: $col-background;
+    font-size: 1.3rem;
+}

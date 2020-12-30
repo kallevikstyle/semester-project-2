@@ -1,8 +1,10 @@
 body {
     background-color: $col-background;
     color: $col-copy;
+    font-family: $font-copy;
+    font-weight: 300;
 
-    h1 {
+    h1, h2 {
         font-family: $font-brand;
         font-weight: 400;
     }
@@ -27,4 +29,15 @@ body {
     background-color: $col-highlight;
     border: none;
 }
+.close-button {
+    color: $col-warning;
+    font-size: 2rem;
+}
+// Modals
+.modal-content {
+    background-color: $col-background;
 
+    .modal-header {
+        border-color: $col-copy;
+    }
+}

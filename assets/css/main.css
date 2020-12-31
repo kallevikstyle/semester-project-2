@@ -31,6 +31,14 @@ body ul {
   font-family: "Cinzel", serif;
 }
 
+.btn-danger {
+  background-color: #D64A38;
+}
+
+.btn-warning {
+  background-color: #E0CA02;
+}
+
 .btn-light {
   background-color: #E0CA02;
   border: none;

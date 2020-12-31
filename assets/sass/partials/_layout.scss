@@ -25,6 +25,12 @@ body {
 .btn {
     font-family: $font-brand;
 }
+.btn-danger {
+    background-color: $col-warning;
+}
+.btn-warning {
+    background-color: $col-highlight;
+}
 .btn-light {
     background-color: $col-highlight;
     border: none;
@@ -33,6 +39,7 @@ body {
     color: $col-warning;
     font-size: 2rem;
 }
+
 // Modals
 .modal-content {
     background-color: $col-background;

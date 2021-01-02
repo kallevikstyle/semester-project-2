@@ -8,7 +8,7 @@ body {
   font-weight: 300;
 }
 
-body h1, body h2 {
+body h1, body h2, body h3 {
   font-family: "Cinzel", serif;
   font-weight: 400;
 }
@@ -148,7 +148,21 @@ body ul {
   border: 1px solid #F0F0F0;
   border-radius: 5px;
   margin-top: 0;
-  height: 100vh;
   background-color: #21211E;
   font-size: 1.3rem;
+}
+
+.character-select__card-container .card {
+  margin: 0 0 10px 10px;
+  max-width: 200px;
+  background-color: #717167;
+  color: #21211E;
+}
+
+.character-select__card-container .card:last-child {
+  margin-right: 10px;
+}
+
+.character-select__card-container .card-title {
+  color: #F0F0F0;
 }

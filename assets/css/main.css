@@ -164,5 +164,11 @@ body ul {
 }
 
 .character-select__card-container .card-title {
+  font-size: 1.3rem;
+  text-align: center;
   color: #F0F0F0;
+}
+
+.character-select__card-container .card-text {
+  font-size: 1.2rem;
 }

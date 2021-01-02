@@ -20,7 +20,12 @@
             }
 
             &-title {
+                font-size: 1.3rem;
+                text-align: center;
                 color: $col-copy;
+            }
+            &-text {
+                font-size: 1.2rem;
             }
         }
     }

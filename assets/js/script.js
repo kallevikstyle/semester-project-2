@@ -1,3 +1,3 @@
-import { testing } from "./lib/select-characters.js";
+import { testlog } from "./lib/select-characters.js";
 
-testing();
+testlog.blabla.message();

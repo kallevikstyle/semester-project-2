@@ -4,9 +4,11 @@
 body {
   background-color: #21211E;
   color: #F0F0F0;
+  font-family: "Oswald", arial, sans-serif;
+  font-weight: 300;
 }
 
-body h1 {
+body h1, body h2, body h3 {
   font-family: "Cinzel", serif;
   font-weight: 400;
 }
@@ -29,9 +31,30 @@ body ul {
   font-family: "Cinzel", serif;
 }
 
+.btn-danger {
+  background-color: #D64A38;
+}
+
+.btn-warning {
+  background-color: #E0CA02;
+}
+
 .btn-light {
   background-color: #E0CA02;
   border: none;
+}
+
+.close-button {
+  color: #D64A38;
+  font-size: 2rem;
+}
+
+.modal-content {
+  background-color: #21211E;
+}
+
+.modal-content .modal-header {
+  border-color: #F0F0F0;
 }
 
 .page-header {
@@ -119,4 +142,34 @@ body ul {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+
+.character-select {
+  border: 1px solid #F0F0F0;
+  border-radius: 5px;
+  margin-top: 0;
+  min-height: 100vh;
+  background-color: #21211E;
+  font-size: 1.3rem;
+}
+
+.character-select__card-container .card {
+  margin: 0 0 10px 10px;
+  max-width: 200px;
+  background-color: #717167;
+  color: #21211E;
+}
+
+.character-select__card-container .card:last-child {
+  margin-right: 10px;
+}
+
+.character-select__card-container .card-title {
+  font-size: 1.3rem;
+  text-align: center;
+  color: #F0F0F0;
+}
+
+.character-select__card-container .card-text {
+  font-size: 1.2rem;
 }

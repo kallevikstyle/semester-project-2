@@ -1,8 +1,10 @@
 body {
     background-color: $col-background;
     color: $col-copy;
+    font-family: $font-copy;
+    font-weight: 300;
 
-    h1 {
+    h1, h2, h3 {
         font-family: $font-brand;
         font-weight: 400;
     }
@@ -23,8 +25,26 @@ body {
 .btn {
     font-family: $font-brand;
 }
+.btn-danger {
+    background-color: $col-warning;
+}
+.btn-warning {
+    background-color: $col-highlight;
+}
 .btn-light {
     background-color: $col-highlight;
     border: none;
 }
+.close-button {
+    color: $col-warning;
+    font-size: 2rem;
+}
 
+// Modals
+.modal-content {
+    background-color: $col-background;
+
+    .modal-header {
+        border-color: $col-copy;
+    }
+}

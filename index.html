@@ -17,8 +17,8 @@
             <ul class="start-menu__nav">
                 <li class="nav-item">
                     <!-- Play button -->
-                    <button type="button" class="start-menu__play btn btn-light">
-                        <span>Play</span>
+                    <button type="button" class="start-menu__play btn btn-light" data-toggle="modal" data-target=".character-select-modal">
+                        <span>Start</span>
                     </button>
                 </li>
                 <li class="nav-item">
@@ -40,7 +40,83 @@
         <div class="page-banner__banner-img"></div>
 
     </section>
-    
+
+    <!-- Character select modal -->
+    <section class="modal fade character-select-modal" tabindex="-1" role="dialog" aria-labelledby="character-select-title" aria-hidden="true">
+        <div class="modal-dialog modal-xl character-select" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="character-select-title">Select characters</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="close-button" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body container">
+                    <p>Select the brave characters that will fight for the throne in King's Landing.</p>
+
+                    <div class="character-select__card-container row justify-content-center">
+                        <!-- Character cards -->
+
+                        <div class="card col-3">
+                            <img class="card-img-top" src="https://via.placeholder.com/200" alt="Character placeholder">
+                            <div class="card-body">
+                                <h3 class="card-title">Arya Stark</h3>
+                                <p class="card-text">
+                                    Born in 289 AC,<br>
+                                    Winterfell
+                                </p>
+                                <!-- <a href="#!" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                        </div>
+
+                        <div class="card col-3">
+                            <img class="card-img-top" src="https://via.placeholder.com/200" alt="Character placeholder">
+                            <div class="card-body">
+                                <h3 class="card-title">Brienne of Tarth</h3>
+                                <p class="card-text">
+                                Content
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card col-3">
+                            <img class="card-img-top" src="https://via.placeholder.com/200" alt="Character placeholder">
+                            <div class="card-body">
+                                <h4 class="card-title">Card title</h4>
+                                <p class="card-text">
+                                    Content
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card col-3">
+                            <img class="card-img-top" src="https://via.placeholder.com/200" alt="Character placeholder">
+                            <div class="card-body">
+                                <h4 class="card-title">Card title</h4>
+                                <p class="card-text">
+                                    Content
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card col-3">
+                            <img class="card-img-top" src="https://via.placeholder.com/200" alt="Character placeholder">
+                            <div class="card-body">
+                                <h4 class="card-title">Card title</h4>
+                                <p class="card-text">
+                                    Content
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning">Play game</button>
+                  </div>
+            </div>
+        </div>
+
+    </section>
     <!-- Main content -->
     <main class="container" role="main">
         <div class="row">

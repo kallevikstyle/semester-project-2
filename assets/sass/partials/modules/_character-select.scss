@@ -1,0 +1,32 @@
+.character-select {
+    // @include dummyBorder(yellow);
+    border: 1px solid $col-copy;
+    border-radius: 5px;
+    margin-top: 0;
+    min-height: 100vh;
+    background-color: $col-background;
+    font-size: 1.3rem;
+
+    &__card-container {
+
+        .card {
+            margin: 0 0 10px 10px;
+            max-width: 200px;
+            background-color: lighten($col-background, 30%);
+            color: $col-background;
+
+            &:last-child {
+                margin-right: 10px;
+            }
+
+            &-title {
+                font-size: 1.3rem;
+                text-align: center;
+                color: $col-copy;
+            }
+            &-text {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

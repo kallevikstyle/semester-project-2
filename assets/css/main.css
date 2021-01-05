@@ -155,14 +155,9 @@ body ul {
 
 .character-select__card-container .card {
   margin: 0 0 10px 10px;
-  max-width: 200px;
   background-color: #717167;
   color: #21211E;
   border-radius: 2px;
-}
-
-.character-select__card-container .card:last-child {
-  margin-right: 10px;
 }
 
 .character-select__card-container .card-title {

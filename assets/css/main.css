@@ -155,15 +155,29 @@ body ul {
 
 .character-select__card-container .card {
   margin: 0 0 10px 10px;
+  max-width: 200px;
   background-color: #717167;
   color: #21211E;
   border-radius: 2px;
+  text-align: center;
 }
 
 .character-select__card-container .card-title {
   font-size: 1.3rem;
-  text-align: center;
   color: #F0F0F0;
+}
+
+.character-select__card-container .card-alias {
+  font-size: 1rem;
+  color: #a4a49a;
+}
+
+.character-select__card-container .card-alias:before {
+  content: "\00AB";
+}
+
+.character-select__card-container .card-alias:after {
+  content: "\00BB";
 }
 
 .character-select__card-container .card-text {

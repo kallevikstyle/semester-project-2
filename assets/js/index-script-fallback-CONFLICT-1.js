@@ -33,7 +33,12 @@ const sortCharacters = {
 // +------ displayCharacters.js start ------+
 const displayCharacters = {
 	parentContainer: $(".character-select__card-container"),
-	createCards: function(items, parent) {
+<<<<<<< HEAD
+	grid: "col-12 col-md-3",
+=======
+	grid: "col-12",
+>>>>>>> got-api-implementation
+	createCards: function(items, parent, grid) {
 		// Create a card for each item in array
 		for (let i = 0; i < items.length; i++) {
 			const card = $('<div></div>'),
@@ -41,7 +46,7 @@ const displayCharacters = {
 				cardBody = $('<div></div>');
 
 			// Add classes and attributes to elements
-			card.addClass(`card`);
+			card.addClass(`card ${grid}`);
 			imgTop.addClass('card-img-top');
 			cardBody.addClass('card-body');
 			imgTop.attr(`src`, `https://via.placeholder.com/200`);
@@ -50,17 +55,21 @@ const displayCharacters = {
 			// Append elements
 			cardBody.html(`
 				<h3 class="card-title">${items[i].name}</h3>
-				<p class="card-alias">${items[i].alias}</p>
                 <p class="card-text">${items[i].born}</p>
 			`);
 			card.append(imgTop);
 			card.append(cardBody);
 			parent.append(card);
 		}
+
+		
+
+
+
 	},
 	start: function(items) {
-		// Pass items to createCards method
-		this.createCards(items, this.parentContainer);
+		// this.parentContainer.html("Testing jquery");
+		this.createCards(items, this.parentContainer, this.grid);
 	}
 }
 

@@ -1,11 +1,13 @@
 import { sortCharacters } from "./lib/getCharacters.js";
+import { displayCharacters } from "./lib/displayCharacters.js";
 
 function displayCharacterCards(items) {
     // Get sorted array of characters
     const characters = sortCharacters.createArray(items);
-    
+    // Display playable characters on page
+    displayCharacters.start(characters);
     // Display character cards on page
-    console.log(characters);
+    // console.log(characters);
 }
 
 (function() {

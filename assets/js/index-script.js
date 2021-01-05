@@ -1,6 +1,6 @@
 import { sortCharacters } from "./lib/getCharacters.js";
 
-function displayCharacters(items) {
+function displayCharacterCards(items) {
     // Get sorted array of characters
     const characters = sortCharacters.createArray(items);
     
@@ -13,7 +13,7 @@ function displayCharacters(items) {
     fetch('/assets/json/characters.json')
         .then(result => result.json())
         .then((data) => {
-            displayCharacters(data);
+            displayCharacterCards(data);
         })
         .catch(err => console.log("err"));
 })();

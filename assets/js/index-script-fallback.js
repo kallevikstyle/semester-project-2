@@ -30,10 +30,52 @@ const sortCharacters = {
 }
 // +------ getCharacters.js end ------+
 
-function displayCharacters(items) {
+// +------ displayCharacters.js start ------+
+const displayCharacters = {
+	parentContainer: $(".character-select__card-container"),
+	grid: "col-12",
+	createCards: function(items, parent, grid) {
+		// Create a card for each item in array
+		for (let i = 0; i < items.length; i++) {
+			const card = $('<div></div>'),
+				imgTop = $('<img>'),
+				cardBody = $('<div></div>');
+
+			// Add classes and attributes to elements
+			card.addClass(`card ${grid}`);
+			imgTop.addClass('card-img-top');
+			cardBody.addClass('card-body');
+			imgTop.attr(`src`, `https://via.placeholder.com/200`);
+			imgTop.attr(`alt`, `Character placeholder`);
+			
+			// Append elements
+			cardBody.html(`
+				<h3 class="card-title">${items[i].name}</h3>
+                <p class="card-text">${items[i].born}</p>
+			`);
+			card.append(imgTop);
+			card.append(cardBody);
+			parent.append(card);
+		}
+
+		
+
+
+
+	},
+	start: function(items) {
+		// this.parentContainer.html("Testing jquery");
+		this.createCards(items, this.parentContainer, this.grid);
+	}
+}
+
+// +------ displayCharacters.js end ------+
+
+function displayCharacterCards(items) {
     // Get sorted array of characters
     const characters = sortCharacters.createArray(items);
     
+    displayCharacters.start(characters);
     // Display character cards on page
     console.log(characters);
 }
@@ -43,7 +85,7 @@ function displayCharacters(items) {
     fetch('/assets/json/characters.json')
         .then(result => result.json())
         .then((data) => {
-            displayCharacters(data);
+            displayCharacterCards(data);
         })
         .catch(err => console.log("err"));
 })();

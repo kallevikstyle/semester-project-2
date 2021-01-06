@@ -1,4 +1,4 @@
-export const displayCharacters = {
+const charactersMethods = {
     parentContainer: $(".character-select__card-container"),
     howManySelected: function() {
         const allCards = $('.card');
@@ -22,21 +22,30 @@ export const displayCharacters = {
                 // Deselect the card which is clicked
                 card.removeClass();
                 card.addClass('card');
-            } else if (displayCharacters.howManySelected() === 2) {
+            } else if (charactersMethods.howManySelected() === 2) {
                 // The user tries to select a 3rd character
                 console.log("You can not select more than 2 characters");
-            } else if (displayCharacters.howManySelected() === 1) {
-                // Player 2 is selected
-                card.addClass('card--selected');
-            } else if (displayCharacters.howManySelected() === 0) {
-                // Player 1 is selected
-                card.addClass('card--selected');
+            } else if (charactersMethods.howManySelected() === 1) {
+                // Select player when another player is already selected
+				card.addClass('card--selected');
+
+				// If a player 1 is already selected
+				if ($('.card--player1')[0]) {
+					card.addClass('card--player2');
+				} else {
+					// A player 2 is already selected
+					card.addClass('card--player1');
+				}
+				
+            } else if (charactersMethods.howManySelected() === 0) {
+                // Select player 1
+				card.addClass('card--selected');
+				card.addClass('card--player1');
             } else {
                 console.log("Sorry, there was an unexpected error... Please try again.")
             }
             
-            displayCharacters.howManySelected();
-            // console.log(selectedCount);
+            // charactersMethods.howManySelected();
         });
     },
 	createCards: function(items) {
@@ -68,8 +77,8 @@ export const displayCharacters = {
             this.eventListener(card, items[i]);
 		}
 	},
-	start: function(items) {
-		// Pass items to createCards method
-		this.createCards(items);
-	}
+}
+
+export const displayCharacters = function(items) {
+	charactersMethods.createCards(items);
 }

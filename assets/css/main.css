@@ -187,3 +187,11 @@ body ul {
 .character-select__card-container .card--selected {
   border: 4px solid #E0CA02;
 }
+
+.character-select__card-container .card--player1 {
+  border-color: #017336;
+}
+
+.character-select__card-container .card--player2 {
+  border-color: #D64A38;
+}

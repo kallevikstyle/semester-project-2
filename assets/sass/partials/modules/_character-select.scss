@@ -38,6 +38,12 @@
             &--selected {
                 border: 4px solid $col-highlight;
             }
+            &--player1 {
+                border-color: $col-success;
+            }
+            &--player2 {
+                border-color: $col-warning;
+            }
         }
     }
 }

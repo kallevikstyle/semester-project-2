@@ -5,7 +5,7 @@ function displayCharacterCards(items) {
     // Get sorted array of characters
     const characters = sortCharacters.createArray(items);
     // Display playable characters on page
-    displayCharacters.start(characters);
+    displayCharacters(characters);
     // Display character cards on page
     // console.log(characters);
 }

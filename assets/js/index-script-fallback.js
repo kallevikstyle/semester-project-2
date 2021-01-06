@@ -32,7 +32,7 @@ const sortCharacters = {
 // +------ getCharacters.js end ------+
 
 // +------ displayCharacters.js start ------+
-const displayCharacters = {
+const charactersMethods = {
 	parentContainer: $(".character-select__card-container"),
     howManySelected: function() {
         const allCards = $('.card');
@@ -56,21 +56,19 @@ const displayCharacters = {
                 // Deselect the card which is clicked
                 card.removeClass();
                 card.addClass('card');
-            } else if (displayCharacters.howManySelected() === 2) {
+            } else if (charactersMethods.howManySelected() === 2) {
                 // The user tries to select a 3rd character
                 console.log("You can not select more than 2 characters");
-            } else if (displayCharacters.howManySelected() === 1) {
+            } else if (charactersMethods.howManySelected() === 1) {
                 // Player 2 is selected
                 card.addClass('card--selected');
-            } else if (displayCharacters.howManySelected() === 0) {
+            } else if (charactersMethods.howManySelected() === 0) {
                 // Player 1 is selected
                 card.addClass('card--selected');
             } else {
                 console.log("Sorry, there was an unexpected error... Please try again.")
             }
             
-            displayCharacters.howManySelected();
-            // console.log(selectedCount);
         });
     },
 	createCards: function(items) {
@@ -101,10 +99,6 @@ const displayCharacters = {
 			// Create event listener for click
             this.eventListener(card, items[i]);
 		}
-	},
-	start: function(items) {
-		// Pass items to createCards method
-		this.createCards(items);
 	}
 }
 
@@ -114,7 +108,7 @@ function displayCharacterCards(items) {
     // Get sorted array of characters
     const characters = sortCharacters.createArray(items);
     
-    displayCharacters.start(characters);
+    charactersMethods.createCards(characters);
     // Display character cards on page
     console.log(characters);
 }

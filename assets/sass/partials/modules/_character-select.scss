@@ -35,6 +35,9 @@
             &-text {
                 font-size: 1.2rem;
             }
+            &--selected {
+                border: 4px solid $col-highlight;
+            }
         }
     }
 }

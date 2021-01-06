@@ -183,3 +183,7 @@ body ul {
 .character-select__card-container .card-text {
   font-size: 1.2rem;
 }
+
+.character-select__card-container .card--selected {
+  border: 4px solid #E0CA02;
+}

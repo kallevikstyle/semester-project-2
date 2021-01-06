@@ -15,6 +15,7 @@ export const sortCharacters = {
             // Create array of playable characters
             characters.forEach(function(item) {
                 let itemObj = {
+                    id: item.Id,
                     name: item.Name,
                     alias: sortCharacters.pickRandomAlias(item.Aliases),
                     born: item.Born

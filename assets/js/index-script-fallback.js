@@ -34,20 +34,43 @@ const sortCharacters = {
 // +------ displayCharacters.js start ------+
 const displayCharacters = {
 	parentContainer: $(".character-select__card-container"),
+    howManySelected: function() {
+        const allCards = $('.card');
+        let selectedCount = 0;
+
+        for (let i=0; i < allCards.length; i++) {
+            if (allCards[i].classList.contains('card--selected')) {
+                selectedCount++;
+            }
+        }
+
+        return selectedCount;
+    },
 	eventListener: function(card, character) {
         // Create event listener for card
         card.click(function() {
-            const allCards = $('.card');
-            let selectedCount = 0;
+            
             console.log(character.name);
-            // console.log(character.id);
-            $(`#character-${character.id}`).toggleClass('card--selected');
-            for (let i=1; i < allCards.length; i++) {
-                if (allCards[i].classList.contains('card--selected')) {
-                    selectedCount++;
-                }
+            // Check how many cards are selected
+            if (card.hasClass('card--selected')) {
+                // Deselect the card which is clicked
+                card.removeClass();
+                card.addClass('card');
+            } else if (displayCharacters.howManySelected() === 2) {
+                // The user tries to select a 3rd character
+                console.log("You can not select more than 2 characters");
+            } else if (displayCharacters.howManySelected() === 1) {
+                // Player 2 is selected
+                card.addClass('card--selected');
+            } else if (displayCharacters.howManySelected() === 0) {
+                // Player 1 is selected
+                card.addClass('card--selected');
+            } else {
+                console.log("Sorry, there was an unexpected error... Please try again.")
             }
-            console.log(selectedCount);
+            
+            displayCharacters.howManySelected();
+            // console.log(selectedCount);
         });
     },
 	createCards: function(items) {

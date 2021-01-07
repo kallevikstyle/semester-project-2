@@ -195,3 +195,12 @@ body ul {
 .character-select__card-container .card--player2 {
   border-color: #D64A38;
 }
+
+.gameboard {
+  width: 1000px;
+  height: 1000px;
+  margin: 20px auto 0 auto;
+  background-image: url("../images/gameboard-beta-1700px.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}

@@ -46,14 +46,30 @@ const charactersMethods = {
 
         return selectedCount;
     },
+    selectedCharacters: function(player, character, selected) {
+        if (player > 0 && selected) {
+            localStorage.setItem(`player${player}`, character.id);
+        } else {
+            localStorage.removeItem(`player${player}`);
+        }
+        
+
+
+    },
 	eventListener: function(card, character) {
         // Create event listener for card
         card.click(function() {
+            let selected;
             
-            console.log(character.name);
             // Check how many cards are selected
             if (card.hasClass('card--selected')) {
                 // Deselect the card which is clicked
+                selected = false;
+                if (card.hasClass('card--player1')) {
+                    charactersMethods.selectedCharacters(1, character, selected);
+                } else {
+                    charactersMethods.selectedCharacters(2, character, selected);
+                }
                 card.removeClass();
                 card.addClass('card');
             } else if (charactersMethods.howManySelected() === 2) {
@@ -65,14 +81,20 @@ const charactersMethods = {
 
                 // If a player 1 is already selected
                 if ($('.card--player1')[0]) {
+                    selected = true;
+                    charactersMethods.selectedCharacters(2, character, selected);
                     card.addClass('card--player2');
                 } else {
                     // A player 2 is already selected
+                    selected = true;
+                    charactersMethods.selectedCharacters(1, character, selected);
                     card.addClass('card--player1');
                 }
                 
             } else if (charactersMethods.howManySelected() === 0) {
                 // Select player 1
+                selected = true;
+                charactersMethods.selectedCharacters(1, character, selected);
                 card.addClass('card--selected');
                 card.addClass('card--player1');
             } else {
@@ -118,9 +140,11 @@ function displayCharacterCards(items) {
     // Get sorted array of characters
     const characters = sortCharacters.createArray(items);
     
-    charactersMethods.createCards(characters);
+    // Clear localStorage
+    localStorage.clear();
+
     // Display character cards on page
-    console.log(characters);
+    charactersMethods.createCards(characters);
 }
 
 (function() {

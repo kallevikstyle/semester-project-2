@@ -12,14 +12,27 @@ const charactersMethods = {
 
         return selectedCount;
     },
+    selectedCharacters: function(player, character, selected) {
+        if (player > 0 && selected) {
+            localStorage.setItem(`player${player}`, character.id);
+        } else {
+            localStorage.removeItem(`player${player}`);
+        }
+    },
 	eventListener: function(card, character) {
         // Create event listener for card
         card.click(function() {
+            let selected;
             
-            console.log(character.name);
             // Check how many cards are selected
             if (card.hasClass('card--selected')) {
                 // Deselect the card which is clicked
+                selected = false;
+                if (card.hasClass('card--player1')) {
+                    charactersMethods.selectedCharacters(1, character, selected);
+                } else {
+                    charactersMethods.selectedCharacters(2, character, selected);
+                }
                 card.removeClass();
                 card.addClass('card');
             } else if (charactersMethods.howManySelected() === 2) {
@@ -27,25 +40,29 @@ const charactersMethods = {
                 console.log("You can not select more than 2 characters");
             } else if (charactersMethods.howManySelected() === 1) {
                 // Select player when another player is already selected
-				card.addClass('card--selected');
+                card.addClass('card--selected');
 
-				// If a player 1 is already selected
-				if ($('.card--player1')[0]) {
-					card.addClass('card--player2');
-				} else {
-					// A player 2 is already selected
-					card.addClass('card--player1');
-				}
-				
+                // If a player 1 is already selected
+                if ($('.card--player1')[0]) {
+                    selected = true;
+                    charactersMethods.selectedCharacters(2, character, selected);
+                    card.addClass('card--player2');
+                } else {
+                    // A player 2 is already selected
+                    selected = true;
+                    charactersMethods.selectedCharacters(1, character, selected);
+                    card.addClass('card--player1');
+                }
+                
             } else if (charactersMethods.howManySelected() === 0) {
                 // Select player 1
-				card.addClass('card--selected');
-				card.addClass('card--player1');
+                selected = true;
+                charactersMethods.selectedCharacters(1, character, selected);
+                card.addClass('card--selected');
+                card.addClass('card--player1');
             } else {
                 console.log("Sorry, there was an unexpected error... Please try again.")
             }
-            
-            // charactersMethods.howManySelected();
         });
     },
 	createCards: function(items) {

@@ -60,11 +60,21 @@ const charactersMethods = {
                 // The user tries to select a 3rd character
                 console.log("You can not select more than 2 characters");
             } else if (charactersMethods.howManySelected() === 1) {
-                // Player 2 is selected
+                // Select player when another player is already selected
                 card.addClass('card--selected');
+
+                // If a player 1 is already selected
+                if ($('.card--player1')[0]) {
+                    card.addClass('card--player2');
+                } else {
+                    // A player 2 is already selected
+                    card.addClass('card--player1');
+                }
+                
             } else if (charactersMethods.howManySelected() === 0) {
-                // Player 1 is selected
+                // Select player 1
                 card.addClass('card--selected');
+                card.addClass('card--player1');
             } else {
                 console.log("Sorry, there was an unexpected error... Please try again.")
             }

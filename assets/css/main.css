@@ -197,10 +197,10 @@ body ul {
 }
 
 .gameboard {
-  width: 1000px;
+  width: 1200px;
   height: 1000px;
   margin: 20px auto 0 auto;
-  background-image: url("../images/gameboard-beta-1700px.jpg");
+  background-image: url("../images/gameboard-beta-1700px-v2.jpg");
   background-repeat: no-repeat;
   background-size: contain;
 }

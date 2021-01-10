@@ -1,0 +1,1 @@
+import animatedDice from "./lib/components/animated-dice/animatedDice.js";

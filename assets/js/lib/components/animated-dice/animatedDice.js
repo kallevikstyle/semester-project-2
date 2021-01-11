@@ -1,3 +1,11 @@
+// EDIT SETTINGS BELOW THIS LINE
+// -----------------------------
+const settings = {
+	size: 70
+};
+// DO NOT EDIT CODE BELOW THIS LINE
+// --------------------------------
+
 export default customElements.define(
     "animated-dice",
     class extends HTMLElement {
@@ -10,13 +18,8 @@ export default customElements.define(
 						padding: 0;
 					}
 					.container {
-						width: 200px;
-						height: 200px;
-						position: relative;
-						margin: 40px auto;
-						/*border: 1px solid #000;*/
-						perspective: 1000px;
-						perspective-origin: 50% 100%;
+						width: ${settings.size}px;
+						height: ${settings.size}px;
 					}
 					.dice {
 						width: 100%;
@@ -28,44 +31,44 @@ export default customElements.define(
 					.dice:hover {
 						cursor: pointer;
 					}
-					/* Dice faces */
+					/*Dice faces */
 
 					.dice .dice__face {
 						display: block;
 						position: absolute;
-						width: 200px;
-						height: 100px;
+						width: ${settings.size}px;
+						height: ${settings.size / 2}px;
 						background-color: white;
 						background-repeat: no-repeat;
 						background-size: contain;
 						
 
 						margin: 0 auto;
-						padding: 50px 0;
+						padding: ${settings.size / 4}px 0;
 					}
 					.dice .front {
-						background-image: url('lib/components/animated-dice/images/d1.png');
-						transform: translateZ(100px);
+						background-image: url('assets/js/lib/components/animated-dice/images/d1.png');
+						transform: translateZ(${settings.size / 2}px);
 					}
 					.dice .back {
-						background-image: url('images/d2.png');
-						transform: rotateX(-180deg) translateZ(100px);
+						background-image: url('assets/js/lib/components/animated-dice/images/d2.png');
+						transform: rotateX(-180deg) translateZ(${settings.size / 2}px);
 					}
 					.dice .right {
-						background-image: url('images/d3.png');
-						transform: rotateY(90deg) translateZ(100px);
+						background-image: url('assets/js/lib/components/animated-dice/images/d3.png');
+						transform: rotateY(90deg) translateZ(${settings.size / 2}px);
 					}
 					.dice .left {
-						background-image: url('images/d4.png');
-						transform: rotateY(-90deg) translateZ(100px);
+						background-image: url('assets/js/lib/components/animated-dice/images/d4.png');
+						transform: rotateY(-90deg) translateZ(${settings.size / 2}px);
 					}
 					.dice .top {
-						background-image: url('images/d5.png');
-						transform: rotateX(90deg) translateZ(100px);
+						background-image: url('assets/js/lib/components/animated-dice/images/d5.png');
+						transform: rotateX(90deg) translateZ(${settings.size / 2}px);
 					}
 					.dice .bottom {
-						background-image: url('images/d6.png');
-						transform: rotateX(-90deg) translateZ(100px);
+						background-image: url('assets/js/lib/components/animated-dice/images/d6.png');
+						transform: rotateX(-90deg) translateZ(${settings.size / 2}px);
 					}
             	</style>
             	<div class="container">
@@ -104,12 +107,12 @@ export default customElements.define(
 				const diceFaces = ['back', 'right', 'left', 'top', 'bottom'],
 					frontFaceDiv = shadow.querySelector('.front');
 				let diceImages = {
-					'd1': 'images/d1.png',
-					'd2': 'images/d2.png',
-					'd3': 'images/d3.png',
-					'd4': 'images/d4.png',
-					'd5': 'images/d5.png',
-					'd6': 'images/d6.png'
+					'd1': 'assets/js/lib/components/animated-dice/images/d1.png',
+					'd2': 'assets/js/lib/components/animated-dice/images/d2.png',
+					'd3': 'assets/js/lib/components/animated-dice/images/d3.png',
+					'd4': 'assets/js/lib/components/animated-dice/images/d4.png',
+					'd5': 'assets/js/lib/components/animated-dice/images/d5.png',
+					'd6': 'assets/js/lib/components/animated-dice/images/d6.png'
 				},
 				frontImg = diceImages[`d${diceRoll}`];
 				frontFaceDiv.style.backgroundImage = `url(${frontImg})`;

@@ -197,10 +197,18 @@ body ul {
 }
 
 .gameboard {
+  position: relative;
   width: 1200px;
   height: 906px;
   margin: 20px auto 0 auto;
   background-image: url("../images/gameboard-1200x906px.jpg");
   background-repeat: no-repeat;
   background-size: contain;
+  border: 1px dashed green;
+}
+
+.gameboard__dice {
+  position: absolute;
+  top: 310.5px;
+  left: 629.5px;
 }

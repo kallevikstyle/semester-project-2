@@ -15,4 +15,20 @@
 		// width: 100px;
 		
 	}
+
+	// FALLBACK DICE
+	.fallbackDice {
+	height: 70px;
+	width: 70px;
+	position: absolute;
+	top: 310.5px;
+	left: 629.5px;
+	background-image: url('../js/lib/components/animated-dice/images/d1.png');
+	background-size: contain;
+
+	}
 }
+
+
+	
+

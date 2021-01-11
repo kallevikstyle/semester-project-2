@@ -15,7 +15,14 @@
     <main class="" role="main">
         
         <div class="gameboard">
-            <animated-dice class ="gameboard__dice">Error</animated-dice>
+            <animated-dice class ="gameboard__dice">
+         
+            </animated-dice>
+            <!-- Fallback -->
+                
+            <div class="fallbackDice">
+            
+            </div>
         </div>
         
     </main>
@@ -30,7 +37,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script type="text/javascript" src="assets/js/frameworks/bootstrap.min.js"></script>
-    // <script type="module" src="assets/js/gameboard-script.js"></script>
-    <!-- // <script nomodule src="assets/js/index-script-fallback.js"></script> -->
+    <script type="module" src="assets/js/gameboard-script.js"></script>
+    <!-- <script nomodule src="assets/js/gameboard-script-fallback.js"></script> -->
 </body>
 </html>

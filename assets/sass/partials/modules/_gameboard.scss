@@ -6,25 +6,54 @@
 	background-image: url('../images/gameboard-1200x906px.jpg');
 	background-repeat: no-repeat;
 	background-size: contain;
-	border: 1px dashed green;
+
+	// --- Dashboard panel ---
+	&__dashboard {
+		position: absolute;
+		display: flex;
+		flex-direction: row;
+		width: 410px;
+		height: 70px;
+		top: 310.5px;
+		left: 423.5px;
+		border: 1px dashed yellow;
+	}
+	&__status {
+		background-color: grey;
+		width: 160px;
+		height: 100%;
+		&--player1 {
+			
+		}
+		&--player2 {
+			 
+		}
+	}
+	&__dice-container {
+		display: inline-block;
+		margin: 0 auto;
+		background-color: lime;
+		width: 70px;
+		height: 100%;
+	}
 
 	&__dice {
-		position: absolute;
-		top: 310.5px;
-		left: 629.5px;
+		// position: absolute;
+		// top: 310.5px;
+		// left: 629.5px;
 		// width: 100px;
 		
 	}
 
 	// FALLBACK DICE
 	.fallbackDice {
-	height: 70px;
-	width: 70px;
-	position: absolute;
-	top: 310.5px;
-	left: 629.5px;
-	background-image: url('../js/lib/components/animated-dice/images/d1.png');
-	background-size: contain;
+		height: 70px;
+		width: 70px;
+		// position: absolute;
+		// top: 310.5px;
+		// left: 629.5px;
+		background-image: url('../js/lib/components/animated-dice/images/d1.png');
+		background-size: contain;
 
 	}
 }

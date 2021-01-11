@@ -3,6 +3,7 @@
 const settings = {
 	size: 70
 };
+
 // DO NOT EDIT CODE BELOW THIS LINE
 // --------------------------------
 
@@ -20,6 +21,9 @@ export default customElements.define(
 					.container {
 						width: ${settings.size}px;
 						height: ${settings.size}px;
+						margin: 0 auto;
+						perspective: 1000px;
+						perspective-origin: 50% 100%;
 					}
 					.dice {
 						width: 100%;

@@ -214,11 +214,9 @@ body ul {
   height: 70px;
   top: 310.5px;
   left: 423.5px;
-  border: 1px dashed yellow;
 }
 
 .gameboard__status {
-  background-color: grey;
   width: 160px;
   height: 100%;
 }
@@ -226,7 +224,6 @@ body ul {
 .gameboard__dice-container {
   display: inline-block;
   margin: 0 auto;
-  background-color: lime;
   width: 70px;
   height: 100%;
 }

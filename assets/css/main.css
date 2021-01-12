@@ -206,7 +206,7 @@ body ul {
   background-size: contain;
 }
 
-.gameboard__dashboard {
+.center-panel {
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -216,19 +216,19 @@ body ul {
   left: 423.5px;
 }
 
-.gameboard__status {
+.center-panel__status {
   width: 160px;
   height: 100%;
 }
 
-.gameboard__dice-container {
+.center-panel__dice-container {
   display: inline-block;
   margin: 0 auto;
   width: 70px;
   height: 100%;
 }
 
-.gameboard .fallbackDice {
+.center-panel .fallbackDice {
   height: 70px;
   width: 70px;
   background-image: url("../js/lib/components/animated-dice/images/d1.png");

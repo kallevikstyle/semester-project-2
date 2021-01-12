@@ -6,6 +6,17 @@
 	background-image: url('../images/gameboard-1200x906px.jpg');
 	background-repeat: no-repeat;
 	background-size: contain;
+
+	&__space-container {
+		position: absolute;
+		border: 1px dashed red;
+	}
+	&__spaces {
+		position: relative;
+		background-color: grey;
+		width: 100%;
+		height: 100%;
+	}
 }
 
 

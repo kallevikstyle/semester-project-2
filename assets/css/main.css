@@ -218,8 +218,15 @@ body ul {
   height: 100%;
 }
 
+.gameboard__space {
+  position: absolute;
+  background-color: yellow;
+  border-radius: 50%;
+}
+
 .center-panel {
   position: absolute;
+  z-index: 1000;
   display: flex;
   flex-direction: row;
   width: 410px;

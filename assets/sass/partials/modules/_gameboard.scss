@@ -17,12 +17,18 @@
 		width: 100%;
 		height: 100%;
 	}
+	&__space {
+		position: absolute;
+		background-color: yellow;
+		border-radius: 50%;
+	}
 }
 
 
 	// --- Center panel ---
 .center-panel {
 	position: absolute;
+	z-index: 1000;
 	display: flex;
 	flex-direction: row;
 	width: 410px;

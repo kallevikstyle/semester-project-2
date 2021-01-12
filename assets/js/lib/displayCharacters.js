@@ -14,9 +14,11 @@ const charactersMethods = {
     },
     selectedCharacters: function(player, character, selected) {
         if (player > 0 && selected) {
-            localStorage.setItem(`player${player}`, character.id);
+            localStorage.setItem(`player${player}`, character.name);
+            localStorage.setItem(`alias${player}`, character.alias);
         } else {
             localStorage.removeItem(`player${player}`);
+            localStorage.removeItem(`alias${player}`);
         }
     },
 	eventListener: function(card, character) {

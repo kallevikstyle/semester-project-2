@@ -93,10 +93,11 @@ export default customElements.define(
 				rotY = 0;
 			
             dice.onclick = function() {
-				const diceRoll = Math.floor(Math.random() * 6) + 1;
+				const diceRoll = Math.floor(Math.random() * 6) + 1,
+					diceElement = document.querySelector('animated-dice');
 
 				// Assign diceRoll to dataset in HTML element
-				dice.dataset.diceRoll = diceRoll;
+				diceElement.dataset.diceRoll = diceRoll;
 				
 				// Assign images to the faces of the dice
 				changeFaces(diceRoll, shadow);

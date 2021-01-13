@@ -13,7 +13,7 @@
 	}
 	&__spaces {
 		position: relative;
-		background-color: grey;
+		// background-color: grey;
 		width: 100%;
 		height: 100%;
 	}
@@ -21,6 +21,25 @@
 		position: absolute;
 		background-color: yellow;
 		border-radius: 50%;
+
+		&--start {
+			background-color: $col-success;
+		}
+		&--meereen,
+		&--sunspear {
+			background-color: lighten($col-background, 15%);
+			border: 1px solid $col-copy;
+		}
+		&--winterfell,
+		&--hardhome {
+			background-color: darken($col-copy, 30%);
+		}
+		&--castleblack {
+			background-color: $col-copy;
+		}
+		&--dragon {
+			background-color: $col-warning;
+		}
 	}
 }
 

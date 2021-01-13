@@ -213,7 +213,6 @@ body ul {
 
 .gameboard__spaces {
   position: relative;
-  background-color: grey;
   width: 100%;
   height: 100%;
 }
@@ -222,6 +221,27 @@ body ul {
   position: absolute;
   background-color: yellow;
   border-radius: 50%;
+}
+
+.gameboard__space--start {
+  background-color: #017336;
+}
+
+.gameboard__space--meereen, .gameboard__space--sunspear {
+  background-color: #494942;
+  border: 1px solid #F0F0F0;
+}
+
+.gameboard__space--winterfell, .gameboard__space--hardhome {
+  background-color: #a4a3a3;
+}
+
+.gameboard__space--castleblack {
+  background-color: #F0F0F0;
+}
+
+.gameboard__space--dragon {
+  background-color: #D64A38;
 }
 
 .center-panel {

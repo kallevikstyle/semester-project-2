@@ -1,23 +1,20 @@
-// Coordinates and dimensions for board spaces
-const spaceDetails = {
-    xAxisLeft: 329.8876,
-    xAxisRight: 929.3828,
-    yAxisTop: 232.841,
-    yAxisBottom: 454.7887,
-    largeWidth: 32.7542,
-    standardWidth: 43.8783
-    },
-    spaces = [
-        {id: 0, large: false, x: spaceDetails.xAxisLeft, y: spaceDetails.yAxisBottom}
-    ];
-    
-    
+import { spaces, spaceGuide } from "./components/boardSpaceDetails.js";
+
 export const createBoardSpaces = {
-    displaySpaces: function(guideline) {
-        // Dilemma:
-        // Bruke absolutte koordinater på gameboard
-        // eller
-        // Bruke relative koordinater fra guideline div
+    displaySpaces: function(parent) {
+        for (let i = 0; i < spaces.length; i++) {
+            // Create new space
+            const newSpace = $('<div></div>');
+
+            newSpace.addClass(`gameboard__space gameboard__space--${spaces[i].zone}`);
+            newSpace.css({
+                'width': `${spaces[i].width}px`,
+                'height': `${spaces[i].width}px`,
+                'top': `${spaces[i].top()}px`,
+                'left': `${spaces[i].left()}px`
+            });
+            parent.append(newSpace);
+        }
     },
     start: function() {
         // Create guideline for spaces
@@ -29,16 +26,15 @@ export const createBoardSpaces = {
         boardSpaces.addClass('gameboard__spaces');
         // Give guideline dimentions and positioning
         boardSpaceContainer.css({
-            "width": `${spaceDetails.xAxisRight - spaceDetails.xAxisLeft}px`,
-            "height": `${spaceDetails.yAxisBottom - spaceDetails.yAxisTop}px`,
-            "top": `${spaceDetails.yAxisTop}px`,
-            "left": `${spaceDetails.xAxisLeft}px`
+            "width": `${spaceGuide.containerWidth}px`,
+            "height": `${spaceGuide.containerHeigth}px`,
+            "top": `${spaceGuide.containerTop}px`,
+            "left": `${spaceGuide.containerLeft}px`
         });
-       
+    
         boardSpaceContainer.append(boardSpaces);
         parent.append(boardSpaceContainer);
-
+       
         this.displaySpaces(boardSpaces);
     }
 };
-

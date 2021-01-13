@@ -12,7 +12,7 @@ export const spaces = [
     {
         // Bottom left
         id: 0,
-        width: spaceGuide.standardWidth,
+        width: spaceGuide.largeWidth,
         top: function() {
             return spaceGuide.containerHeigth - (this.width / 2);	
         },

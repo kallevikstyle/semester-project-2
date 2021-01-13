@@ -208,7 +208,7 @@ body ul {
 
 .gameboard__space-container {
   position: absolute;
-  border: 1px dashed red;
+  border: 1px solid #a4a3a3;
 }
 
 .gameboard__spaces {

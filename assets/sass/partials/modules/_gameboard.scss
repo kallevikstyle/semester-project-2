@@ -7,9 +7,21 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 
+	&__player1 {
+		position: absolute;
+		z-index: 1000;
+		width: 10px;
+		height: 10px;
+		background-color: lime;
+		border-radius: 50%;
+	}
 	&__space-container {
 		position: absolute;
 		border: 1px solid darken($col-copy, 30%);
+		width: $spaceContainerWidth;
+		height: $spaceContainerHeigth;
+		top: $spaceContainerTop;
+		left: $spaceContainerLeft;
 	}
 	&__spaces {
 		position: relative;
@@ -18,7 +30,6 @@
 	}
 	&__space {
 		position: absolute;
-		background-color: yellow;
 		border-radius: 50%;
 
 		&--start {
@@ -38,6 +49,9 @@
 		}
 		&--dragon {
 			background-color: $col-warning;
+		}
+		&--kingslanding {
+			background-color: $col-highlight;
 		}
 	}
 }

@@ -1,7 +1,5 @@
-import { spaces, spaceGuide } from "./components/boardSpaceDetails.js";
-
 export const createBoardSpaces = {
-    displaySpaces: function(parent) {
+    displaySpaces: function(parent, spaces) {
         for (let i = 0; i < spaces.length; i++) {
             // Create new space
             const newSpace = $('<div></div>');
@@ -13,28 +11,14 @@ export const createBoardSpaces = {
                 'top': `${spaces[i].top()}px`,
                 'left': `${spaces[i].left()}px`
             });
+            newSpace.attr('id', `space${spaces[i].id}`);
             parent.append(newSpace);
         }
     },
-    start: function() {
+    start: function(spaces) {
         // Create guideline for spaces
-        const parent = $('.gameboard'),
-            boardSpaceContainer = $('<div></div>'),
-            boardSpaces = $('<div></div>');
-
-        boardSpaceContainer.addClass('gameboard__space-container');
-        boardSpaces.addClass('gameboard__spaces');
-        // Give guideline dimentions and positioning
-        boardSpaceContainer.css({
-            "width": `${spaceGuide.containerWidth}px`,
-            "height": `${spaceGuide.containerHeigth}px`,
-            "top": `${spaceGuide.containerTop}px`,
-            "left": `${spaceGuide.containerLeft}px`
-        });
-    
-        boardSpaceContainer.append(boardSpaces);
-        parent.append(boardSpaceContainer);
-       
-        this.displaySpaces(boardSpaces);
+        const parent = $('.gameboard__spaces');
+           
+        this.displaySpaces(parent, spaces);
     }
 };

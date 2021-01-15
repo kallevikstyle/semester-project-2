@@ -206,9 +206,22 @@ body ul {
   background-size: contain;
 }
 
+.gameboard__player1 {
+  position: absolute;
+  z-index: 1000;
+  width: 10px;
+  height: 10px;
+  background-color: lime;
+  border-radius: 50%;
+}
+
 .gameboard__space-container {
   position: absolute;
   border: 1px solid #a4a3a3;
+  width: 605px;
+  height: 220px;
+  top: 233px;
+  left: 327px;
 }
 
 .gameboard__spaces {
@@ -219,7 +232,6 @@ body ul {
 
 .gameboard__space {
   position: absolute;
-  background-color: yellow;
   border-radius: 50%;
 }
 
@@ -242,6 +254,10 @@ body ul {
 
 .gameboard__space--dragon {
   background-color: #D64A38;
+}
+
+.gameboard__space--kingslanding {
+  background-color: #E0CA02;
 }
 
 .center-panel {

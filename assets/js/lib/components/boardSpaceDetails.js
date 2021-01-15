@@ -1,9 +1,10 @@
+const boardSpaceContainer = document.querySelector('.gameboard__space-container');
 // Coordinates and dimensions for board spaces
-export const spaceGuide = {
-    containerLeft: 327,
-    containerTop: 233,
-    containerWidth: 605,
-    containerHeigth: 220,
+const spaceGuide = {
+    containerLeft: boardSpaceContainer.offsetLeft,
+    containerTop: boardSpaceContainer.offsetTop,
+    containerWidth: boardSpaceContainer.offsetWidth,
+    containerHeigth: boardSpaceContainer.offsetHeight,
     largeWidth: 43,
     standardWidth: 33
 };

@@ -20,7 +20,8 @@ export const spaces = [
         left: function() {
             return 0 - (this.width / 2);
         },
-        zone: "start"
+        zone: "start",
+        xAxis: true
     },
     {
         id: 1,
@@ -31,7 +32,8 @@ export const spaces = [
         left: function() {
             return 55 - (this.width / 2);
         },
-        zone: "meereen"
+        zone: "meereen",
+        xAxis: true
     },
     {
         id: 2,
@@ -42,7 +44,8 @@ export const spaces = [
         left: function() {
             return 110 - (this.width / 2);
         },
-        zone: "meereen"
+        zone: "meereen",
+        xAxis: true
     },
     {
         id: 3,
@@ -53,7 +56,8 @@ export const spaces = [
         left: function() {
             return 165 - (this.width / 2);
         },
-        zone: "meereen"
+        zone: "meereen",
+        xAxis: true
     },
     {
         id: 4,
@@ -64,7 +68,8 @@ export const spaces = [
         left: function() {
             return 220 - (this.width / 2);
         },
-        zone: "meereen"
+        zone: "meereen",
+        xAxis: true
     },
     {
         id: 5,
@@ -75,7 +80,8 @@ export const spaces = [
         left: function() {
             return 275 - (this.width / 2);
         },
-        zone: "meereen"
+        zone: "meereen",
+        xAxis: true
     },
     {
         id: 6,
@@ -86,7 +92,8 @@ export const spaces = [
         left: function() {
             return 330 - (this.width / 2);
         },
-        zone: "winterfell"
+        zone: "winterfell",
+        xAxis: true
     },
     {
         id: 7,
@@ -97,7 +104,8 @@ export const spaces = [
         left: function() {
             return 385 - (this.width / 2);
         },
-        zone: "winterfell"
+        zone: "winterfell",
+        xAxis: true
     },
     {
         id: 8,
@@ -108,7 +116,8 @@ export const spaces = [
         left: function() {
             return 440 - (this.width / 2);
         },
-        zone: "winterfell"
+        zone: "winterfell",
+        xAxis: true
     },
     {
         id: 9,
@@ -119,7 +128,8 @@ export const spaces = [
         left: function() {
             return 495 - (this.width / 2);
         },
-        zone: "winterfell"
+        zone: "winterfell",
+        xAxis: true
     },
     {
         id: 10,
@@ -130,7 +140,8 @@ export const spaces = [
         left: function() {
             return 550 - (this.width / 2);
         },
-        zone: "winterfell"
+        zone: "winterfell",
+        xAxis: true
     },
     {
         // Bottom right
@@ -142,7 +153,8 @@ export const spaces = [
         left: function() {
             return spaceGuide.containerWidth - (this.width / 2);
         },
-        zone: "castleblack"
+        zone: "castleblack",
+        xAxis: false
     },
     {
         id: 12,
@@ -153,7 +165,8 @@ export const spaces = [
         left: function() {
             return spaceGuide.containerWidth - (this.width / 2);
         },
-        zone: "castleblack"
+        zone: "castleblack",
+        xAxis: false
     },
     {
         id: 13,
@@ -164,7 +177,8 @@ export const spaces = [
         left: function() {
             return spaceGuide.containerWidth - (this.width / 2);
         },
-        zone: "castleblack"
+        zone: "castleblack",
+        xAxis: false
     },
     {
         id: 14,
@@ -175,7 +189,8 @@ export const spaces = [
         left: function() {
             return spaceGuide.containerWidth - (this.width / 2);
         },
-        zone: "castleblack"
+        zone: "castleblack",
+        xAxis: false
     },
     {
         // Top right
@@ -187,7 +202,8 @@ export const spaces = [
         left: function() {
             return (spaceGuide.containerWidth - this.width) + (this.width / 2);
         },
-        zone: "castleblack"
+        zone: "castleblack",
+        xAxis: true
     },
     {
         id: 16,
@@ -198,7 +214,8 @@ export const spaces = [
         left: function() {
             return 550 - (this.width / 2);
         },
-        zone: "hardhome"
+        zone: "hardhome",
+        xAxis: true
     },
     {
         id: 17,
@@ -209,7 +226,8 @@ export const spaces = [
         left: function() {
             return 495 - (this.width / 2);
         },
-        zone: "hardhome"
+        zone: "hardhome",
+        xAxis: true
     },
     {
         id: 18,
@@ -220,7 +238,8 @@ export const spaces = [
         left: function() {
             return 440 - (this.width / 2);
         },
-        zone: "hardhome"
+        zone: "hardhome",
+        xAxis: true
     },
     {
         id: 19,
@@ -231,7 +250,8 @@ export const spaces = [
         left: function() {
             return 385 - (this.width / 2);
         },
-        zone: "hardhome"
+        zone: "hardhome",
+        xAxis: true
     },
     {
         id: 20,
@@ -242,7 +262,8 @@ export const spaces = [
         left: function() {
             return 330 - (this.width / 2);
         },
-        zone: "hardhome"
+        zone: "hardhome",
+        xAxis: true
     },
     {
         id: 21,
@@ -253,7 +274,8 @@ export const spaces = [
         left: function() {
             return 275 - (this.width / 2);
         },
-        zone: "sunspear"
+        zone: "sunspear",
+        xAxis: true
     },
     {
         id: 22,
@@ -264,7 +286,8 @@ export const spaces = [
         left: function() {
             return 220 - (this.width / 2);
         },
-        zone: "sunspear"
+        zone: "sunspear",
+        xAxis: true
     },
     {
         id: 23,
@@ -275,7 +298,8 @@ export const spaces = [
         left: function() {
             return 165 - (this.width / 2);
         },
-        zone: "sunspear"
+        zone: "sunspear",
+        xAxis: true
     },
     {
         id: 24,
@@ -286,7 +310,8 @@ export const spaces = [
         left: function() {
             return 110 - (this.width / 2);
         },
-        zone: "sunspear"
+        zone: "sunspear",
+        xAxis: true
     },
     {
         id: 25,
@@ -297,7 +322,8 @@ export const spaces = [
         left: function() {
             return 55 - (this.width / 2);
         },
-        zone: "sunspear"
+        zone: "sunspear",
+        xAxis: true
     },
     {
         // Top left
@@ -309,7 +335,8 @@ export const spaces = [
         left: function() {
             return 0 - (this.width / 2);
         },
-        zone: "dragon"
+        zone: "dragon",
+        xAxis: false
     },
     {
         id: 27,
@@ -320,7 +347,8 @@ export const spaces = [
         left: function() {
             return 0 - (this.width / 2);
         },
-        zone: "kingslanding"
+        zone: "kingslanding",
+        xAxis: false
     },
     {
         id: 28,
@@ -331,7 +359,8 @@ export const spaces = [
         left: function() {
             return 0 - (this.width / 2);
         },
-        zone: "kingslanding"
+        zone: "kingslanding",
+        xAxis: false
     },
     {
         id: 29,
@@ -342,6 +371,7 @@ export const spaces = [
         left: function() {
             return 0 - (this.width / 2);
         },
-        zone: "kingslanding"
+        zone: "kingslanding",
+        xAxis: false
     }
 ]

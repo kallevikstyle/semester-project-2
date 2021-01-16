@@ -206,13 +206,20 @@ body ul {
   background-size: contain;
 }
 
-.gameboard__player1 {
+.gameboard__token {
   position: absolute;
   z-index: 1000;
   width: 10px;
   height: 10px;
-  background-color: lime;
   border-radius: 50%;
+}
+
+.gameboard__token--player1 {
+  background-color: lime;
+}
+
+.gameboard__token--player2 {
+  background-color: lightcoral;
 }
 
 .gameboard__space-container {

@@ -7,13 +7,19 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 
-	&__player1 {
+	&__token {
 		position: absolute;
 		z-index: 1000;
 		width: 10px;
 		height: 10px;
-		background-color: lime;
 		border-radius: 50%;
+
+		&--player1 {
+			background-color: lime;
+		}
+		&--player2 {
+			background-color: lightcoral;
+		}
 	}
 	&__space-container {
 		position: absolute;

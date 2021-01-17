@@ -1,7 +1,8 @@
 // EDIT SETTINGS BELOW THIS LINE
 // -----------------------------
 const settings = {
-	size: 70
+	size: 70,
+	duration: 2
 };
 
 // DO NOT EDIT CODE BELOW THIS LINE
@@ -30,7 +31,7 @@ export default customElements.define(
 						height: 100%;
 						position: absolute;
 						transform-style: preserve-3d;
-						transition: transform 2s;
+						transition: transform ${settings.duration}s;
 					}
 					.dice:hover {
 						cursor: pointer;

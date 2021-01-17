@@ -21,7 +21,7 @@ export const spaces = [
             return 0 - (this.width / 2);
         },
         zone: "start",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 1,
@@ -33,7 +33,7 @@ export const spaces = [
             return 55 - (this.width / 2);
         },
         zone: "meereen",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 2,
@@ -45,7 +45,7 @@ export const spaces = [
             return 110 - (this.width / 2);
         },
         zone: "meereen",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 3,
@@ -57,7 +57,7 @@ export const spaces = [
             return 165 - (this.width / 2);
         },
         zone: "meereen",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 4,
@@ -69,7 +69,7 @@ export const spaces = [
             return 220 - (this.width / 2);
         },
         zone: "meereen",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 5,
@@ -81,7 +81,7 @@ export const spaces = [
             return 275 - (this.width / 2);
         },
         zone: "meereen",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 6,
@@ -93,7 +93,7 @@ export const spaces = [
             return 330 - (this.width / 2);
         },
         zone: "winterfell",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 7,
@@ -105,7 +105,7 @@ export const spaces = [
             return 385 - (this.width / 2);
         },
         zone: "winterfell",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 8,
@@ -117,7 +117,7 @@ export const spaces = [
             return 440 - (this.width / 2);
         },
         zone: "winterfell",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 9,
@@ -129,7 +129,7 @@ export const spaces = [
             return 495 - (this.width / 2);
         },
         zone: "winterfell",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 10,
@@ -141,7 +141,7 @@ export const spaces = [
             return 550 - (this.width / 2);
         },
         zone: "winterfell",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         // Bottom right
@@ -154,7 +154,7 @@ export const spaces = [
             return spaceGuide.containerWidth - (this.width / 2);
         },
         zone: "castleblack",
-        xAxis: false
+        xAxisFirst: false
     },
     {
         id: 12,
@@ -166,7 +166,7 @@ export const spaces = [
             return spaceGuide.containerWidth - (this.width / 2);
         },
         zone: "castleblack",
-        xAxis: false
+        xAxisFirst: false
     },
     {
         id: 13,
@@ -178,7 +178,7 @@ export const spaces = [
             return spaceGuide.containerWidth - (this.width / 2);
         },
         zone: "castleblack",
-        xAxis: false
+        xAxisFirst: false
     },
     {
         id: 14,
@@ -190,7 +190,7 @@ export const spaces = [
             return spaceGuide.containerWidth - (this.width / 2);
         },
         zone: "castleblack",
-        xAxis: false
+        xAxisFirst: false
     },
     {
         // Top right
@@ -203,7 +203,7 @@ export const spaces = [
             return (spaceGuide.containerWidth - this.width) + (this.width / 2);
         },
         zone: "castleblack",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 16,
@@ -215,7 +215,7 @@ export const spaces = [
             return 550 - (this.width / 2);
         },
         zone: "hardhome",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 17,
@@ -227,7 +227,7 @@ export const spaces = [
             return 495 - (this.width / 2);
         },
         zone: "hardhome",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 18,
@@ -239,7 +239,7 @@ export const spaces = [
             return 440 - (this.width / 2);
         },
         zone: "hardhome",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 19,
@@ -251,7 +251,7 @@ export const spaces = [
             return 385 - (this.width / 2);
         },
         zone: "hardhome",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 20,
@@ -263,7 +263,7 @@ export const spaces = [
             return 330 - (this.width / 2);
         },
         zone: "hardhome",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 21,
@@ -275,7 +275,7 @@ export const spaces = [
             return 275 - (this.width / 2);
         },
         zone: "sunspear",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 22,
@@ -287,7 +287,7 @@ export const spaces = [
             return 220 - (this.width / 2);
         },
         zone: "sunspear",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 23,
@@ -299,7 +299,7 @@ export const spaces = [
             return 165 - (this.width / 2);
         },
         zone: "sunspear",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 24,
@@ -311,7 +311,7 @@ export const spaces = [
             return 110 - (this.width / 2);
         },
         zone: "sunspear",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         id: 25,
@@ -323,7 +323,7 @@ export const spaces = [
             return 55 - (this.width / 2);
         },
         zone: "sunspear",
-        xAxis: true
+        xAxisFirst: true
     },
     {
         // Top left
@@ -336,7 +336,7 @@ export const spaces = [
             return 0 - (this.width / 2);
         },
         zone: "dragon",
-        xAxis: false
+        xAxisFirst: false
     },
     {
         id: 27,
@@ -348,7 +348,7 @@ export const spaces = [
             return 0 - (this.width / 2);
         },
         zone: "kingslanding",
-        xAxis: false
+        xAxisFirst: false
     },
     {
         id: 28,
@@ -360,7 +360,7 @@ export const spaces = [
             return 0 - (this.width / 2);
         },
         zone: "kingslanding",
-        xAxis: false
+        xAxisFirst: false
     },
     {
         id: 29,
@@ -372,6 +372,6 @@ export const spaces = [
             return 0 - (this.width / 2);
         },
         zone: "kingslanding",
-        xAxis: false
+        xAxisFirst: false
     }
 ]

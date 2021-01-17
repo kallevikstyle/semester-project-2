@@ -1,9 +1,13 @@
 // Animation for player tokens moving on the game board
 export function token(data) {
-    data.token.animate({
-        // TO DO:
-        // Use xAxis property to decide which axis to animate first
-        left: `${data.left}px`,
-        top: `${data.top}px`
-    }, 2000);
+    if (data.xAxisFirst) {
+        // Move on x-axis first
+        data.token.animate({left: `${data.left}px`}, 1000);
+        data.token.animate({top: `${data.top}px`}, 1000);
+        
+    } else {
+        // Move on y-axis first
+        data.token.animate({top: `${data.top}px`}, 1000);
+        data.token.animate({left: `${data.left}px`}, 1000);
+    }
 }

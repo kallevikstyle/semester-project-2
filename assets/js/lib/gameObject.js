@@ -36,24 +36,30 @@ export let game = {
             },
             moveToken: function() {
                 const tokenWidth = game.player1.token[0].offsetWidth;
-                let top, left;
+                let top, left, xAxisFirst;
 
                 // Move tokens based on whose turn it is and if a dice has been rolled
                 if (this.player1 && this.diceRoll) {
+                    // Calculate whether to animate xAxis first
+                    xAxisFirst = spaces[game.player1.space].xAxisFirst;
                     // Calculate new space
                     game.player1.space = (game.player1.space + this.diceRoll) % spaces.length;
-                    // Move token
+                    // Calculate top and left values
                     top = game.player1.position().top() + ((game.player1.position().width / 2) - (tokenWidth / 2));
                     left = game.player1.position().left() + ((game.player1.position().width / 2) - (tokenWidth / 2));
-
-                    return {token: game.player1.token, top, left};
+                    // Return data about token and board space
+                    return {token: game.player1.token, top, left, xAxisFirst};
 
                 } else if (!this.player1 && this.diceRoll) {
+                    // Calculate whether to animate xAxis first
+                    xAxisFirst = spaces[game.player2.space].xAxisFirst;
+                    // Calculate new space
                     game.player2.space = (game.player2.space + this.diceRoll) % spaces.length;
+                    // Calculate top and left values
                     top = game.player2.position().top() + ((game.player2.position().width / 2) - (tokenWidth / 2));
                     left = game.player2.position().left() + ((game.player2.position().width / 2) - (tokenWidth / 2));
-
-                    return {token: game.player2.token, top, left};
+                    // Return data about token and board space
+                    return {token: game.player2.token, top, left, xAxisFirst};
 
                 } else if (!this.diceRoll) {
                     // Place tokens before game starts

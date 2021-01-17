@@ -17,6 +17,9 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
         // Get diceRoll from dice element and move token
         game.turn.diceRoll = Number(dice.dataset.diceRoll);
         animateToken(game.turn.moveToken());
+        // Execute actions based on which space player haas landed on
+        // code here!
+
         // Switch turns
         game.turn.switchTurns(game.turn.diceRoll);
         

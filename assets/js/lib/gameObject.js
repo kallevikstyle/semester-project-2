@@ -7,7 +7,7 @@ export let game = {
             name: localStorage.getItem('player1'),
             alias: localStorage.getItem('alias1'),
             token: $('.gameboard__token--player1'),
-            troops: 0,
+            troops: 10000,
             space: 0,
             position: function() {
                 return spaces[this.space]
@@ -17,7 +17,7 @@ export let game = {
             name: localStorage.getItem('player2'),
             alias: localStorage.getItem('alias2'),
             token: $('.gameboard__token--player2'),
-            troops: 0,
+            troops: 10000,
             space: 0,
             position: function() {
                 return spaces[this.space]
@@ -53,6 +53,8 @@ export let game = {
                         this.battleCard = 1;
                     } else {
                         this.battleCard = 0;
+                        // Player gets standard amount of new troops
+                        game.player1.troops += 5000;
                     }
                     // Return data about token and board space
                     return {token: game.player1.token, top, left, xAxisFirst};
@@ -70,6 +72,8 @@ export let game = {
                         this.battleCard = 2;
                     } else {
                         this.battleCard = 0;
+                        // Player gets standard amount of new troops
+                        game.player2.troops += 5000;
                     }
                     // Return data about token and board space
                     return {token: game.player2.token, top, left, xAxisFirst};

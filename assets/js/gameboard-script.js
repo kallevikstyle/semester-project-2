@@ -17,20 +17,28 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
     game.turn.moveToken();
     // Dice click event
     dice.addEventListener('click', function() {
+        // Reset battleCard variable
+        game.turn.battleCard = 0;
         // Get diceRoll from dice element and move token
         game.turn.diceRoll = Number(dice.dataset.diceRoll);
+        // TEST DICE ---
+        // game.turn.diceRoll = 3;
+        // TEST DICE END ----
         animateToken(game.turn.moveToken());
         // Check if player has landed on a battle card space
         if (game.turn.battleCard === 1) {
             animateCard();
-            battleCard.show(cards, spaces[game.player1.space].zone, 'player1');
+            // Player gets more or less troops from the battle card
+            game.player1.troops += battleCard.show(cards, spaces[game.player1.space].zone);
         } else if (game.turn.battleCard === 2) {
             animateCard();
-            battleCard.show(cards, spaces[game.player2.space].zone, 'player2');
+            // Player gets more or less troops from the battle card
+            game.player2.troops += battleCard.show(cards, spaces[game.player2.space].zone);
         } else {
             console.log(game.turn.battleCard)
         }
-        
+        console.log("Player1: " + game.player1.troops);
+        console.log("Player2: " + game.player2.troops);
         // Switch turns
         game.turn.switchTurns(game.turn.diceRoll);
         

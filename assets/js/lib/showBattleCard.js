@@ -9,12 +9,15 @@ export const battleCard = {
         // Pick a random card
         return zoneCards[Math.floor(Math.random() * zoneCards.length)];
     },
-    show: function(cards, zone, player) {
+    show: function(cards, zone) {
         const battleCard = this.findCard(cards, zone);
         console.log(battleCard);
         cardContent.html(`
-            <h3>${zone}</h3>
-            <p>Blablabla</p>
+            <h3>${battleCard.zoneText}</h3>
+            <p>${battleCard.text}</p>
         `);
+        console.log(battleCard.troops);
+        // Return troop loss or gain the card gives to the player
+        return battleCard.troops;
     }
 };

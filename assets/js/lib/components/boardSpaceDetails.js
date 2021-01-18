@@ -21,7 +21,7 @@ export const spaces = [
             return 0 - (this.width / 2);
         },
         zone: 'start',
-        battle: false,
+        battle: true,
         xAxisFirst: true
     },
     {

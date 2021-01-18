@@ -20,7 +20,8 @@ export const spaces = [
         left: function() {
             return 0 - (this.width / 2);
         },
-        zone: "start",
+        zone: 'start',
+        battle: false,
         xAxisFirst: true
     },
     {
@@ -32,7 +33,8 @@ export const spaces = [
         left: function() {
             return 55 - (this.width / 2);
         },
-        zone: "meereen",
+        zone: 'meereen',
+        battle: false,
         xAxisFirst: true
     },
     {
@@ -44,7 +46,8 @@ export const spaces = [
         left: function() {
             return 110 - (this.width / 2);
         },
-        zone: "meereen",
+        zone: 'meereen',
+        battle: false,
         xAxisFirst: true
     },
     {
@@ -56,7 +59,8 @@ export const spaces = [
         left: function() {
             return 165 - (this.width / 2);
         },
-        zone: "meereen",
+        zone: 'meereen',
+        battle: true,
         xAxisFirst: true
     },
     {
@@ -68,7 +72,8 @@ export const spaces = [
         left: function() {
             return 220 - (this.width / 2);
         },
-        zone: "meereen",
+        zone: 'meereen',
+        battle: false,
         xAxisFirst: true
     },
     {
@@ -80,7 +85,8 @@ export const spaces = [
         left: function() {
             return 275 - (this.width / 2);
         },
-        zone: "meereen",
+        zone: 'meereen',
+        battle: false,
         xAxisFirst: true
     },
     {
@@ -92,7 +98,8 @@ export const spaces = [
         left: function() {
             return 330 - (this.width / 2);
         },
-        zone: "winterfell",
+        zone: 'winterfell',
+        battle: false,
         xAxisFirst: true
     },
     {
@@ -104,7 +111,8 @@ export const spaces = [
         left: function() {
             return 385 - (this.width / 2);
         },
-        zone: "winterfell",
+        zone: 'winterfell',
+        battle: false,
         xAxisFirst: true
     },
     {
@@ -116,7 +124,8 @@ export const spaces = [
         left: function() {
             return 440 - (this.width / 2);
         },
-        zone: "winterfell",
+        zone: 'winterfell',
+        battle: true,
         xAxisFirst: true
     },
     {
@@ -128,7 +137,8 @@ export const spaces = [
         left: function() {
             return 495 - (this.width / 2);
         },
-        zone: "winterfell",
+        zone: 'winterfell',
+        battle: false,
         xAxisFirst: true
     },
     {
@@ -140,7 +150,8 @@ export const spaces = [
         left: function() {
             return 550 - (this.width / 2);
         },
-        zone: "winterfell",
+        zone: 'winterfell',
+        battle: false,
         xAxisFirst: true
     },
     {
@@ -153,7 +164,8 @@ export const spaces = [
         left: function() {
             return spaceGuide.containerWidth - (this.width / 2);
         },
-        zone: "castleblack",
+        zone: 'castleblack',
+        battle: false,
         xAxisFirst: false
     },
     {
@@ -165,7 +177,8 @@ export const spaces = [
         left: function() {
             return spaceGuide.containerWidth - (this.width / 2);
         },
-        zone: "castleblack",
+        zone: 'castleblack',
+        battle: false,
         xAxisFirst: false
     },
     {
@@ -177,7 +190,8 @@ export const spaces = [
         left: function() {
             return spaceGuide.containerWidth - (this.width / 2);
         },
-        zone: "castleblack",
+        zone: 'castleblack',
+        battle: true,
         xAxisFirst: false
     },
     {
@@ -189,7 +203,8 @@ export const spaces = [
         left: function() {
             return spaceGuide.containerWidth - (this.width / 2);
         },
-        zone: "castleblack",
+        zone: 'castleblack',
+        battle: false,
         xAxisFirst: false
     },
     {
@@ -202,7 +217,8 @@ export const spaces = [
         left: function() {
             return (spaceGuide.containerWidth - this.width) + (this.width / 2);
         },
-        zone: "castleblack",
+        zone: 'castleblack',
+        battle: false,
         xAxisFirst: true
     },
     {
@@ -214,7 +230,8 @@ export const spaces = [
         left: function() {
             return 550 - (this.width / 2);
         },
-        zone: "hardhome",
+        zone: 'hardhome',
+        battle: false,
         xAxisFirst: true
     },
     {
@@ -226,7 +243,8 @@ export const spaces = [
         left: function() {
             return 495 - (this.width / 2);
         },
-        zone: "hardhome",
+        zone: 'hardhome',
+        battle: false,
         xAxisFirst: true
     },
     {
@@ -238,7 +256,8 @@ export const spaces = [
         left: function() {
             return 440 - (this.width / 2);
         },
-        zone: "hardhome",
+        zone: 'hardhome',
+        battle: true,
         xAxisFirst: true
     },
     {
@@ -250,7 +269,8 @@ export const spaces = [
         left: function() {
             return 385 - (this.width / 2);
         },
-        zone: "hardhome",
+        zone: 'hardhome',
+        battle: false,
         xAxisFirst: true
     },
     {
@@ -262,7 +282,8 @@ export const spaces = [
         left: function() {
             return 330 - (this.width / 2);
         },
-        zone: "hardhome",
+        zone: 'hardhome',
+        battle: false,
         xAxisFirst: true
     },
     {
@@ -274,7 +295,8 @@ export const spaces = [
         left: function() {
             return 275 - (this.width / 2);
         },
-        zone: "sunspear",
+        zone: 'sunspear',
+        battle: false,
         xAxisFirst: true
     },
     {
@@ -286,7 +308,8 @@ export const spaces = [
         left: function() {
             return 220 - (this.width / 2);
         },
-        zone: "sunspear",
+        zone: 'sunspear',
+        battle: false,
         xAxisFirst: true
     },
     {
@@ -298,7 +321,8 @@ export const spaces = [
         left: function() {
             return 165 - (this.width / 2);
         },
-        zone: "sunspear",
+        zone: 'sunspear',
+        battle: true,
         xAxisFirst: true
     },
     {
@@ -310,7 +334,8 @@ export const spaces = [
         left: function() {
             return 110 - (this.width / 2);
         },
-        zone: "sunspear",
+        zone: 'sunspear',
+        battle: false,
         xAxisFirst: true
     },
     {
@@ -322,7 +347,8 @@ export const spaces = [
         left: function() {
             return 55 - (this.width / 2);
         },
-        zone: "sunspear",
+        zone: 'sunspear',
+        battle: false,
         xAxisFirst: true
     },
     {
@@ -335,7 +361,8 @@ export const spaces = [
         left: function() {
             return 0 - (this.width / 2);
         },
-        zone: "dragon",
+        zone: 'dragon',
+        battle: false,
         xAxisFirst: false
     },
     {
@@ -347,7 +374,8 @@ export const spaces = [
         left: function() {
             return 0 - (this.width / 2);
         },
-        zone: "kingslanding",
+        zone: 'kingslanding',
+        battle: false,
         xAxisFirst: false
     },
     {
@@ -359,7 +387,8 @@ export const spaces = [
         left: function() {
             return 0 - (this.width / 2);
         },
-        zone: "kingslanding",
+        zone: 'kingslanding',
+        battle: false,
         xAxisFirst: false
     },
     {
@@ -371,7 +400,8 @@ export const spaces = [
         left: function() {
             return 0 - (this.width / 2);
         },
-        zone: "kingslanding",
+        zone: 'kingslanding',
+        battle: false,
         xAxisFirst: false
     }
 ]

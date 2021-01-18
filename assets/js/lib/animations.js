@@ -15,13 +15,24 @@ export function token(data) {
     }, 2400);
 }
 
+// Flip battle cards
 export function battleCard() {
-    const cardContent = $('.gameboard__battle-card-content'),
-        cardInner = $('.gameboard__battle-card-inner');
-
+    const cardInner = $('.gameboard__battle-card-inner'),
+        windowWidth = $(window).width();
+    // Flip out card
     setTimeout(function() {
         cardInner.addClass('gameboard__battle-card-inner--flip');
-        // Make this card a modal somehow
-        // https://stackoverflow.com/questions/13183630/how-to-open-a-bootstrap-modal-window-using-jquery
+        cardInner.animate({
+            left: `${(windowWidth / 2)}px`,
+            top: `-40vh`
+        }, "fast");
+        // Click event to close card
+        cardInner.click(function() {
+            cardInner.removeClass('gameboard__battle-card-inner--flip');
+            cardInner.animate({
+                left: `0px`,
+                top: `0px`
+            }, 50);
+        });
     }, 4000);
 }

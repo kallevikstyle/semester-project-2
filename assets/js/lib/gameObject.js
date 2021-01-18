@@ -26,6 +26,7 @@ export let game = {
         turn: {
             player1: true,
             diceRoll: null,
+            battleCard: 0,
             switchTurns: function(diceRoll) {
                 if (diceRoll === 6) {
                     // The player has rolled a 6 and gets another turn
@@ -47,6 +48,12 @@ export let game = {
                     // Calculate top and left values
                     top = game.player1.position().top() + ((game.player1.position().width / 2) - (tokenWidth / 2));
                     left = game.player1.position().left() + ((game.player1.position().width / 2) - (tokenWidth / 2));
+                    // Check if player has landed on a battle card space
+                    if (spaces[game.player1.space].battle) {
+                        this.battleCard = 1;
+                    } else {
+                        this.battleCard = 0;
+                    }
                     // Return data about token and board space
                     return {token: game.player1.token, top, left, xAxisFirst};
 
@@ -58,6 +65,12 @@ export let game = {
                     // Calculate top and left values
                     top = game.player2.position().top() + ((game.player2.position().width / 2) - (tokenWidth / 2));
                     left = game.player2.position().left() + ((game.player2.position().width / 2) - (tokenWidth / 2));
+                    // Check if player has landed on a battle card space
+                    if (spaces[game.player2.space].battle) {
+                        this.battleCard = 2;
+                    } else {
+                        this.battleCard = 0;
+                    }
                     // Return data about token and board space
                     return {token: game.player2.token, top, left, xAxisFirst};
 

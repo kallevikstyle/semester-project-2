@@ -267,6 +267,60 @@ body ul {
   background-color: #E0CA02;
 }
 
+.gameboard__card-stack {
+  position: absolute;
+  width: 161px;
+  height: 247px;
+  top: 521px;
+  left: 86px;
+}
+
+.gameboard__card-stack, .gameboard__battle-card-back {
+  border-radius: 10px;
+  background-color: #21211E;
+  background-image: url("../images/icon-battle.png");
+  background-repeat: no-repeat;
+  background-size: 55%;
+  background-position: center;
+}
+
+.gameboard__battle-card {
+  position: absolute;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.gameboard__battle-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform .5s;
+  transform-style: preserve-3d;
+  transform-origin: left;
+}
+
+.gameboard__battle-card-back, .gameboard__battle-card-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  border: 1px solid #F0F0F0;
+}
+
+.gameboard__battle-card-content {
+  background-color: #F0F0F0;
+  color: #21211E;
+  transform: rotateY(-180deg);
+}
+
+.gameboard__battle-card-inner--flip {
+  transform: rotateY(-180deg) translateX(-100%);
+}
+
 .center-panel {
   position: absolute;
   border: 1px solid #717070;

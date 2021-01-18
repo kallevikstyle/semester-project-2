@@ -14,3 +14,14 @@ export function token(data) {
         }
     }, 2400);
 }
+
+export function battleCard() {
+    const cardContent = $('.gameboard__battle-card-content'),
+        cardInner = $('.gameboard__battle-card-inner');
+
+    setTimeout(function() {
+        cardInner.addClass('gameboard__battle-card-inner--flip');
+        // Make this card a modal somehow
+        // https://stackoverflow.com/questions/13183630/how-to-open-a-bootstrap-modal-window-using-jquery
+    }, 4000);
+}

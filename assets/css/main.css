@@ -49,6 +49,20 @@ body ul {
   font-size: 2rem;
 }
 
+.badge {
+  font-size: 85%;
+}
+
+.badge-primary {
+  background-color: #017336;
+  color: #F0F0F0;
+}
+
+.badge-secondary {
+  background-color: #D64A38;
+  color: #F0F0F0;
+}
+
 .modal-content {
   background-color: #21211E;
 }
@@ -383,37 +397,66 @@ body ul {
   position: relative;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   width: 605px;
-  height: 100px;
+  height: 140px;
   box-sizing: content-box;
   top: 700px;
   left: 327px;
-  border: 1px dashed #F0F0F0;
 }
 
 .scoreboard__avatar {
   width: 100px;
-  height: 100%;
+  height: 100px;
   background-color: dodgerblue;
 }
 
 .scoreboard__status-panel {
   width: 405px;
   height: 100%;
-  background-color: gray;
   display: flex;
   flex-direction: row;
 }
 
 .scoreboard__status {
-  height: 100%;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
-.scoreboard__status--player1 {
-  border: 1px dotted gold;
+.scoreboard__status-header {
+  border-bottom: 1px solid #F0F0F0;
 }
 
-.scoreboard__status--player2 {
-  border: 1px dotted magenta;
+.scoreboard__status-title {
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+.scoreboard__status-body {
+  border-bottom: 1px solid #F0F0F0;
+  background-color: #F0F0F0;
+  color: #21211E;
+}
+
+.scoreboard__status-body--army-count {
+  font-size: 1.6rem;
+  font-family: "Cinzel", serif;
+}
+
+.scoreboard__status-body p {
+  margin: 8px 0;
+}
+
+.scoreboard__status-footer {
+  color: #D64A38;
+}
+
+.scoreboard__status--player1 .player-badge {
+  text-align: left;
+}
+
+.scoreboard__status--player2 .player-badge {
+  text-align: right;
 }

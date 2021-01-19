@@ -159,16 +159,17 @@
 	position: relative;
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	width: $scoreboardWidth;
 	height: $scoreboardHeight;
 	box-sizing: content-box;
 	top: 700px;
 	left: $spaceContainerLeft;
-	border: 1px dashed $col-copy;
+	// border: 1px dashed $col-copy;
 
 	&__avatar {
 		width: $scoreboardAvatarWidth;
-		height: 100%;
+		height: $scoreboardAvatarWidth;
 		background-color: dodgerblue;
 		&--player1 {
 
@@ -180,18 +181,53 @@
 	&__status-panel {
 		width: $scoreboardStatusPanelWidth;
 		height: 100%;
-		background-color: gray;
 		display: flex;
 		flex-direction: row;
 	}
 	&__status {
-		height: 100%;
 		flex: 1;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+
+		&-header {
+			border-bottom: 1px solid $col-copy;
+		}
+		&-title {;
+			margin-top: 5px;
+			font-size: 1rem;
+		}
+		&-body {
+			// margin-top: 10px;
+			border-bottom: 1px solid $col-copy;
+			background-color: $col-copy;
+			color: $col-background;
+
+			&--army-count {
+				font-size: 1.6rem;
+				font-family: $font-brand;
+				// color: $col-highlight;
+			}
+			p {
+				margin: 8px 0;
+			}
+		}
+		&-footer {
+			color: $col-warning;
+		}
 		&--player1 {
-			border: 1px dotted gold;
+			// border: 1px dotted gold;
+
+			.player-badge {
+				text-align: left;
+			}
 		}
 		&--player2 {
-			border: 1px dotted magenta;
+			// border: 1px dotted magenta;
+
+			.player-badge {
+				text-align: right;
+			}
 		}
 	}
 

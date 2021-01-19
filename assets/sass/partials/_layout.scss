@@ -39,6 +39,18 @@ body {
     color: $col-warning;
     font-size: 2rem;
 }
+// Badges
+.badge {
+    font-size: 85%;
+}
+.badge-primary {
+    background-color: $col-success;
+    color: $col-copy;
+}
+.badge-secondary {
+    background-color: $col-warning;
+    color: $col-copy;
+}
 
 // Modals
 .modal-content {

@@ -9,7 +9,8 @@ export let game = {
             moveToken: 2000,
             flipCard: function(){
                 return this.dice + this.moveToken + 400;
-            }
+            }, 
+            scoreUpdate: 0
         },
         player1: {
             name: localStorage.getItem('player1'),

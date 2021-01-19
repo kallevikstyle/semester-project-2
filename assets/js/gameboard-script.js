@@ -22,18 +22,21 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
         // Get diceRoll from dice element and move token
         game.turn.diceRoll = Number(dice.dataset.diceRoll);
         // TEST DICE ---
-        // animateCard();
+        // animateCard(game);
         // game.turn.diceRoll = 3;
         // TEST DICE END ----
-        animateToken(game.turn.moveToken());
+        game.turn.moveToken();
+        animateToken(game);
         // Check if player has landed on a battle card space
         if (game.turn.battleCard === 1) {
-            animateCard();
+            animateCard(game);
             // Player gets more or less troops from the battle card
+            // Insert delay
             game.player1.troops += battleCard.show(cards, spaces[game.player1.space].zone);
         } else if (game.turn.battleCard === 2) {
-            animateCard();
+            animateCard(game);
             // Player gets more or less troops from the battle card
+            // Insert delay
             game.player2.troops += battleCard.show(cards, spaces[game.player2.space].zone);
         } else {
             console.log(game.turn.battleCard)

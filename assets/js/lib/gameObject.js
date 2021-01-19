@@ -3,14 +3,22 @@ import { spaces } from "./components/boardSpaceDetails.js";
 // Game object with details about game and players
 export let game = {
         spacesTotal: 30,
+        timing: {
+            // Animation durations named in milliseconds
+            dice: 2000,
+            moveToken: 2000,
+            flipCard: function(){
+                return this.dice + this.moveToken + 400;
+            }
+        },
         player1: {
             name: localStorage.getItem('player1'),
             alias: localStorage.getItem('alias1'),
             token: $('.gameboard__token--player1'),
             troops: 10000,
-            space: 0,
+            space: 0, 
             position: function() {
-                return spaces[this.space]
+                return spaces[this.space];
             }    
         },
         player2: {
@@ -18,14 +26,18 @@ export let game = {
             alias: localStorage.getItem('alias2'),
             token: $('.gameboard__token--player2'),
             troops: 10000,
-            space: 0,
+            space: 0, 
             position: function() {
-                return spaces[this.space]
+                return spaces[this.space];
             }  
         },
         turn: {
             player1: true,
             diceRoll: null,
+            token: null,
+            moveTop: 0,
+            moveLeft: 0,
+            xAxisFirst: true,
             battleCard: 0,
             switchTurns: function(diceRoll) {
                 if (diceRoll === 6) {
@@ -48,6 +60,8 @@ export let game = {
                     // Calculate top and left values
                     top = game.player1.position().top() + ((game.player1.position().width / 2) - (tokenWidth / 2));
                     left = game.player1.position().left() + ((game.player1.position().width / 2) - (tokenWidth / 2));
+                    // Declare which token to move
+                    this.token = game.player1.token;
                     // Check if player has landed on a battle card space
                     if (spaces[game.player1.space].battle) {
                         this.battleCard = 1;
@@ -56,9 +70,6 @@ export let game = {
                         // Player gets standard amount of new troops
                         game.player1.troops += 5000;
                     }
-                    // Return data about token and board space
-                    return {token: game.player1.token, top, left, xAxisFirst};
-
                 } else if (!this.player1 && this.diceRoll) {
                     // Calculate whether to animate xAxis first
                     xAxisFirst = spaces[game.player2.space].xAxisFirst;
@@ -67,6 +78,8 @@ export let game = {
                     // Calculate top and left values
                     top = game.player2.position().top() + ((game.player2.position().width / 2) - (tokenWidth / 2));
                     left = game.player2.position().left() + ((game.player2.position().width / 2) - (tokenWidth / 2));
+                    // Declare which token to move
+                    this.token = game.player2.token;
                     // Check if player has landed on a battle card space
                     if (spaces[game.player2.space].battle) {
                         this.battleCard = 2;
@@ -75,9 +88,6 @@ export let game = {
                         // Player gets standard amount of new troops
                         game.player2.troops += 5000;
                     }
-                    // Return data about token and board space
-                    return {token: game.player2.token, top, left, xAxisFirst};
-
                 } else if (!this.diceRoll) {
                     // Place tokens before game starts
                     top = game.player1.position().top() + ((game.player1.position().width / 2) - (tokenWidth / 2));
@@ -85,8 +95,12 @@ export let game = {
 
                     game.player1.token.css({'left': `${left}px`, 'top': `${top}px`});
                     game.player2.token.css({'left': `${left}px`, 'top': `${top}px`});
-                    
                 }
+
+                // Store move values in game object
+                this.moveTop = top;
+                this.moveLeft = left;
+                this.xAxisFirst = xAxisFirst;
             }
         }
     }

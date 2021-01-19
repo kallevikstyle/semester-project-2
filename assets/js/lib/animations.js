@@ -1,22 +1,22 @@
 // Animation for player tokens moving on the game board
-export function token(data) {
-    // Delay animation until dice animation is completed (2 seconds)
+export function token(game) {
+    // Delay animation until dice animation is completed
     setTimeout(function() {
-        if (data.xAxisFirst) {
+        if (game.turn.xAxisFirst) {
             // Move on x-axis first
-            data.token.animate({left: `${data.left}px`}, 1000);
-            data.token.animate({top: `${data.top}px`}, 1000);
+            game.turn.token.animate({left: `${game.turn.moveLeft}px`}, (game.timing.moveToken / 2));
+            game.turn.token.animate({top: `${game.turn.moveTop}px`}, (game.timing.moveToken / 2));
             
         } else {
             // Move on y-axis first
-            data.token.animate({top: `${data.top}px`}, 1000);
-            data.token.animate({left: `${data.left}px`}, 1000);
+            game.turn.token.animate({top: `${game.turn.moveTop}px`}, (game.timing.moveToken / 2));
+            game.turn.token.animate({left: `${game.turn.moveLeft}px`}, (game.timing.moveToken / 2));
         }
-    }, 2400);
+    }, (game.timing.dice + 400));
 }
 
 // Flip battle cards
-export function battleCard() {
+export function battleCard(game) {
     const cardInner = $('.gameboard__battle-card-inner'),
         windowWidth = $(window).width();
     // Flip out card
@@ -34,5 +34,5 @@ export function battleCard() {
                 top: `0px`
             }, 50);
         });
-    }, 4000);
+    }, game.timing.flipCard());
 }

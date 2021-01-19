@@ -23,6 +23,10 @@ $col-success: $green;
 
 // --- DIMENSIONS AND POSITIONING ---
 $start-menu-height: 100px;
+// Gameboard
+$gameboardWidth: 1200px;
+$gameboardHeight: 906px;
+
 // Board space container
 $spaceContainerWidth: 605px;
 $spaceContainerHeigth: 220px;
@@ -33,4 +37,9 @@ $battleCardWidth: 161px;
 $battleCardHeigth: 247px;
 $battleCardTop: 521px;
 $battleCardLeft: 86px;
+// Scoreboard
+$scoreboardWidth: $spaceContainerWidth;
+$scoreboardHeight: 100px;
+$scoreboardAvatarWidth: 100px;
+$scoreboardStatusPanelWidth: $scoreboardWidth - ($scoreboardAvatarWidth * 2);
 

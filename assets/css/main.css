@@ -378,3 +378,42 @@ body ul {
   background-image: url("../js/lib/components/animated-dice/images/d1.png");
   background-size: contain;
 }
+
+.scoreboard {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 605px;
+  height: 100px;
+  box-sizing: content-box;
+  top: 700px;
+  left: 327px;
+  border: 1px dashed #F0F0F0;
+}
+
+.scoreboard__avatar {
+  width: 100px;
+  height: 100%;
+  background-color: dodgerblue;
+}
+
+.scoreboard__status-panel {
+  width: 405px;
+  height: 100%;
+  background-color: gray;
+  display: flex;
+  flex-direction: row;
+}
+
+.scoreboard__status {
+  height: 100%;
+  flex: 1;
+}
+
+.scoreboard__status--player1 {
+  border: 1px dotted gold;
+}
+
+.scoreboard__status--player2 {
+  border: 1px dotted magenta;
+}

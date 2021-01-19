@@ -57,6 +57,29 @@ body ul {
   border-color: #F0F0F0;
 }
 
+.gameboard__battle-card-content h3 {
+  margin: 40px 0;
+}
+
+.gameboard__battle-card-content p {
+  max-width: 90%;
+  margin: 0 auto;
+  font-size: 1.3rem;
+}
+
+.gameboard__battle-card-content .battle-card-dismiss {
+  margin-top: 60px;
+  color: #717167;
+}
+
+.gameboard__battle-card-content--lucky {
+  color: #017336;
+}
+
+.gameboard__battle-card-content--unlucky {
+  color: #D64A38;
+}
+
 .page-header {
   margin-bottom: 40px;
 }

@@ -22,6 +22,7 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
         // Get diceRoll from dice element and move token
         game.turn.diceRoll = Number(dice.dataset.diceRoll);
         // TEST DICE ---
+        // animateCard();
         // game.turn.diceRoll = 3;
         // TEST DICE END ----
         animateToken(game.turn.moveToken());

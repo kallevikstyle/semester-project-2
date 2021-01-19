@@ -15,6 +15,7 @@ export const battleCard = {
         cardContent.html(`
             <h3>${battleCard.zoneText}</h3>
             <p>${battleCard.text}</p>
+            <p class="battle-card-dismiss">(click to dismiss)</p>
         `);
         console.log(battleCard.troops);
         // Return troop loss or gain the card gives to the player

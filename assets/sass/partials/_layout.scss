@@ -48,3 +48,26 @@ body {
         border-color: $col-copy;
     }
 }
+// --- Game related ---
+
+// Battle cards
+.gameboard__battle-card-content {
+    h3 {
+        margin: 40px 0;
+    }
+    p {
+        max-width: 90%;
+        margin: 0 auto;
+        font-size: 1.3rem;
+    }
+    .battle-card-dismiss {
+        margin-top: 60px;
+        color: lighten($col-background, 30%);
+    }
+    &--lucky {
+        color: $col-success;
+    }
+    &--unlucky {
+        color: $col-warning;
+    }
+}

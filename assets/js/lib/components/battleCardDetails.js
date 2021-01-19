@@ -24,6 +24,12 @@ export const cards = [
         troops: -4000
     },
     {
+        zone: "meereen",
+        zoneText: "Meereen",
+        text: "While visiting Slaver's Bay you hear terrible stories about slavery and corruption in Yunkai. You decide to storm the city and free the slaved. Your army succeeds and the former slaves are so grateful, that 8000 of them wants to join your army.",
+        troops: 8000
+    },
+    {
         zone: "winterfell",
         zoneText: "Winterfell",
         text: "Some of the inhabitants of Winterfell are convinced that the White Walkers really exist, and tell stories about having seen them in the woods. 2000 of your soldiers decide to stay in Winterfell to protect the north.",
@@ -40,6 +46,12 @@ export const cards = [
         zoneText: "Winterfell",
         text: "Theon Greyjoy and his men rush in to try and take over Winterfell. In the horrible battle you lose 4000 good soldiers.",
         troops: -4000
+    },
+    {
+        zone: "winterfell",
+        zoneText: "Winterfell",
+        text: "The people of Winterfell are impressed by your merits as an army chief, and they are happy that you choose to pay their town a visit. While you are there, you manage to recruit 8000 new soldiers to your army.",
+        troops: 8000
     },
     {
         zone: "castleblack",
@@ -60,6 +72,12 @@ export const cards = [
         troops: -4000
     },
     {
+        zone: "castleblack",
+        zoneText: "Castle Black",
+        text: "While visiting Castle Black you meet a group of unhappy soldiers that are tired of being members of the Night's Watch, and would much rather travel around with you. You speak well to the Lord Commander, and you now have 2000 new soldiers.",
+        troops: 2000
+    },
+    {
         zone: "hardhome",
         zoneText: "Hardhome",
         text: "The wildlings speak highly of their good life and their freedom beyond the Wall. Some of your soldiers seem to like the idea of being free, and 2000 soldiers leave you in Hardhome.",
@@ -78,21 +96,33 @@ export const cards = [
         troops: -4000
     },
     {
+        zone: "hardhome",
+        zoneText: "Hardhome",
+        text: "In Hardhome you become good friends with the king beyond the wall, Mance Rayder. When he hears about your mission to fight for the capital of the Seven Kingdoms, he lends you 6000 of his soldiers for your army.",
+        troops: 6000
+    },
+    {
         zone: "sunspear",
         zoneText: "Sunspear",
-        text: "TEXT HERE.",
+        text: "Some of your soldiers spend the evening at a local bar, where they meet a mysterious girl. The girl that has no name lures some of your soldiers to the House of Black and White to become 'no one'. A player now has 2000 soldiers less.",
         troops: -2000
     },
     {
         zone: "sunspear",
         zoneText: "Sunspear",
-        text: "TEXT HERE.",
+        text: "Some locals invite your army to a nice and relaxing holiday retreat. However, it turns out to be a trap, and House Martell forces 3000 of your soldiers to leave you and fight for them.",
         troops: -3000
     },
     {
         zone: "sunspear",
         zoneText: "Sunspear",
-        text: "TEXT HERE.",
+        text: "There is rumour that pirates from Lys are getting dangerously close to Sunspear. People are frightened, and a part of your army joins the fleet to fight the pirates. You leave 4000 soldiers behind.",
         troops: -4000
+    },
+    {
+        zone: "sunspear",
+        zoneText: "Sunspear",
+        text: "After a successful mission at sea rescuing the people of Dorne from the gruesome pirates, you manage to recruit 8000 new soldiers.",
+        troops: 8000
     }
 ]

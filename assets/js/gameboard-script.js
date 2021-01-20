@@ -1,7 +1,6 @@
 import animatedDice from "./lib/components/animated-dice/animatedDice.js";
 import { createBoardSpaces } from "./lib/boardSpaces.js";
-import { spaces } from "./lib/components/boardSpaceDetails.js";
-import { battleCard } from "./lib/showBattleCard.js";
+import { battleCard } from "./lib/battleCardMethods.js";
 import { cards } from "./lib/components/battleCardDetails.js";
 import { game } from "./lib/gameObject.js";
 import { scoreBoard } from "./lib/scoreBoard.js";
@@ -11,15 +10,28 @@ import { token as animateToken, battleCard as animateCard } from "./lib/animatio
 // Check if players exist in localStorage
 if (localStorage.getItem('player1') && localStorage.getItem('player2') && localStorage.getItem('alias1') && localStorage.getItem('alias2')) {
     // Place spaces on board
-    createBoardSpaces.start(spaces);
+    createBoardSpaces.start(game.spaces);
     // Place player tokens on board
-    game.turn.moveToken();
+    game.turn.getNextSpace();
+    // Add battlecards to game
+    game.cards = cards;
     // Set up scoreboard
     scoreBoard.setup(game);
     // Dice click event
     game.dice.addEventListener('click', function() {
         // Start new turn
-        game.turn.start(animateToken, animateCard, battleCard, cards, scoreBoard);
+        game.turn.start();
+        game.turn.getNextSpace();
+        animateToken(game);
+        battleCard.dealCard(game, animateCard);
+        
+        // Update scoreboard after turn animations have finished
+        setTimeout(function() {
+            // console.log("Player1: " + game.player1.army);
+            // console.log("Player2: " + game.player2.army);
+            scoreBoard.update(game);
+        }, game.timing.scoreUpdate);
+
         // Switch turns
         game.turn.switchTurns(game.turn.diceRoll);
     });

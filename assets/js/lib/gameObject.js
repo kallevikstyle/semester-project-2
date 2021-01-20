@@ -4,6 +4,8 @@ import { spaces } from "./components/boardSpaceDetails.js";
 export let game = {
         dice: document.querySelector('animated-dice'),
         spacesTotal: 30,
+        spaces: spaces,
+        cards: [],
         armyToWin: 100000,
         timing: {
             // Animation durations named in milliseconds
@@ -22,7 +24,7 @@ export let game = {
             armyChange: false,
             space: 0, 
             position: function() {
-                return spaces[this.space];
+                return game.spaces[this.space];
             }    
         },
         player2: {
@@ -33,7 +35,7 @@ export let game = {
             armyChange: false,
             space: 0, 
             position: function() {
-                return spaces[this.space];
+                return game.spaces[this.space];
             }  
         },
         turn: {
@@ -52,26 +54,26 @@ export let game = {
                     this.player1 = !this.player1;
                 }
             },
-            moveToken: function() {
+            getNextSpace: function() {
                 const tokenWidth = game.player1.token[0].offsetWidth;
                 let top, left, xAxisFirst;
 
                 // Move tokens based on whose turn it is and if a dice has been rolled
                 if (this.player1 && this.diceRoll) {
                     // Calculate whether to animate xAxis first
-                    xAxisFirst = spaces[game.player1.space].xAxisFirst;
+                    xAxisFirst = game.spaces[game.player1.space].xAxisFirst;
                     // Calculate new space
-                    game.player1.space = (game.player1.space + this.diceRoll) % spaces.length;
+                    game.player1.space = (game.player1.space + this.diceRoll) % game.spaces.length;
                     // Calculate top and left values
                     top = game.player1.position().top() + ((game.player1.position().width / 2) - (tokenWidth / 2));
                     left = game.player1.position().left() + ((game.player1.position().width / 2) - (tokenWidth / 2));
                     // Declare which token to move
                     this.token = game.player1.token;
                     // Check if player has landed on a battle card space
-                    if (spaces[game.player1.space].battle) {
+                    if (game.spaces[game.player1.space].battle) {
                         this.battleCard = 1;
                     // Check if player can challenge capital
-                    } else if (spaces[game.player1.space].zone === "kingslanding") {
+                    } else if (game.spaces[game.player1.space].zone === "kingslanding") {
                         
 
                     } else {
@@ -82,19 +84,19 @@ export let game = {
                     }
                 } else if (!this.player1 && this.diceRoll) {
                     // Calculate whether to animate xAxis first
-                    xAxisFirst = spaces[game.player2.space].xAxisFirst;
+                    xAxisFirst = game.spaces[game.player2.space].xAxisFirst;
                     // Calculate new space
-                    game.player2.space = (game.player2.space + this.diceRoll) % spaces.length;
+                    game.player2.space = (game.player2.space + this.diceRoll) % game.spaces.length;
                     // Calculate top and left values
                     top = game.player2.position().top() + ((game.player2.position().width / 2) - (tokenWidth / 2));
                     left = game.player2.position().left() + ((game.player2.position().width / 2) - (tokenWidth / 2));
                     // Declare which token to move
                     this.token = game.player2.token;
                     // Check if player has landed on a battle card space
-                    if (spaces[game.player2.space].battle) {
+                    if (game.spaces[game.player2.space].battle) {
                         this.battleCard = 2;
                     // Check if player can challenge capital
-                    } else if (spaces[game.player2.space].zone === "kingslanding") {
+                    } else if (game.spaces[game.player2.space].zone === "kingslanding") {
                     
 
                     } else {
@@ -117,7 +119,7 @@ export let game = {
                 this.moveLeft = left;
                 this.xAxisFirst = xAxisFirst;
             },
-            start: function (animateToken, animateCard, battleCard, cards, scoreBoard) {
+            start: function () {
                 // Reset battleCard variable
                 this.battleCard = 0;
                 // Get diceRoll from dice element and move token
@@ -126,33 +128,7 @@ export let game = {
                 // animateCard(game);
                 // this.diceRoll = 13;
                 // TEST DICE END ----
-                this.moveToken();
-                animateToken(game);
-                // Check if player has landed on a battle card space
-                if (this.battleCard === 1) {
-                    animateCard(game);
-                    // Player gets more or less soldiers from the battle card
-                    game.player1.army += battleCard.show(cards, spaces[game.player1.space].zone);
-                    game.player1.armyChange = true;
-                    // Update timing variable to delay score update
-                    game.timing.scoreUpdate = game.timing.flipCard() + 2000;
-                } else if (this.battleCard === 2) {
-                    animateCard(game);
-                    // Player gets more or less soldiers from the battle card
-                    game.player2.army += battleCard.show(cards, spaces[game.player2.space].zone);
-                    game.player2.armyChange = true;
-                    // Update timing variable to delay score update
-                    game.timing.scoreUpdate = game.timing.flipCard() + 2000;
-                } else {
-                    // Update timing variable to delay score update
-                    game.timing.scoreUpdate = game.timing.dice + game.timing.moveToken;
-                }
-                // Update scoreboard after turn animations have finished
-                setTimeout(function() {
-                    // console.log("Player1: " + game.player1.army);
-                    // console.log("Player2: " + game.player2.army);
-                    scoreBoard.update(game);
-                }, game.timing.scoreUpdate);
+                
             }
         }
     }

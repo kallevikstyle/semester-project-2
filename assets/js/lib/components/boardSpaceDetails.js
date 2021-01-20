@@ -362,7 +362,7 @@ export const spaces = [
             return 0 - (this.width / 2);
         },
         zone: 'dragon',
-        battle: false,
+        battle: true,
         xAxisFirst: false
     },
     {

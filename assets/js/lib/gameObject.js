@@ -2,6 +2,7 @@ import { spaces } from "./components/boardSpaceDetails.js";
 
 // Game object with details about game and players
 export let game = {
+        dice: document.querySelector('animated-dice'),
         spacesTotal: 30,
         armyToWin: 100000,
         timing: {
@@ -107,6 +108,46 @@ export let game = {
                 this.moveTop = top;
                 this.moveLeft = left;
                 this.xAxisFirst = xAxisFirst;
+            },
+            start: function (animateToken, animateCard, battleCard, cards, scoreBoard) {
+                // Reset battleCard variable
+                this.battleCard = 0;
+                // Get diceRoll from dice element and move token
+                this.diceRoll = Number(game.dice.dataset.diceRoll);
+                // TEST DICE ---
+                // animateCard(game);
+                // this.diceRoll = 13;
+                // TEST DICE END ----
+                this.moveToken();
+                animateToken(game);
+                // Check if player has landed on a battle card space
+                if (this.battleCard === 1) {
+                    animateCard(game);
+                    // Player gets more or less soldiers from the battle card
+                    game.player1.army += battleCard.show(cards, spaces[game.player1.space].zone);
+                    game.player1.armyChange = true;
+                    // Update timing variable to delay score update
+                    game.timing.scoreUpdate = game.timing.flipCard() + 2000;
+                } else if (this.battleCard === 2) {
+                    animateCard(game);
+                    // Player gets more or less soldiers from the battle card
+                    game.player2.army += battleCard.show(cards, spaces[game.player2.space].zone);
+                    game.player2.armyChange = true;
+                    // Update timing variable to delay score update
+                    game.timing.scoreUpdate = game.timing.flipCard() + 2000;
+                } else {
+                    // Update timing variable to delay score update
+                    game.timing.scoreUpdate = game.timing.dice + game.timing.moveToken;
+                }
+                // Update scoreboard after turn animations have finished
+                setTimeout(function() {
+                    // console.log("Player1: " + game.player1.army);
+                    // console.log("Player2: " + game.player2.army);
+                    scoreBoard.update(game);
+                }, game.timing.scoreUpdate);
+                
+                // Switch turns
+                this.switchTurns(this.diceRoll);
             }
         }
     }

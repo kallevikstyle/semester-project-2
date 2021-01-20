@@ -124,5 +124,11 @@ export const cards = [
         zoneText: "Sunspear",
         text: "After a successful mission at sea rescuing the people of Dorne from the gruesome pirates, you manage to recruit <span class='gameboard__battle-card-content--lucky'>8000</span> new soldiers.",
         soldiers: 8000
+    },
+    {
+        zone: "dragon",
+        zoneText: "Dragon attack!",
+        text: "Watch out! A dragon is on the loose! The dragon attacks your army and kills <span class='gameboard__battle-card-content--unlucky'>10&nbsp;000</span> of your soldiers.",
+        soldiers: -10000
     }
 ]

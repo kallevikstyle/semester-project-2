@@ -33,14 +33,16 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
         // Check if player has landed on a battle card space
         if (game.turn.battleCard === 1) {
             animateCard(game);
-            // Player gets more or less troops from the battle card
-            game.player1.troops += battleCard.show(cards, spaces[game.player1.space].zone);
+            // Player gets more or less soldiers from the battle card
+            game.player1.army += battleCard.show(cards, spaces[game.player1.space].zone);
+            game.player1.armyChange = true;
             // Update timing variable to delay score update
             game.timing.scoreUpdate = game.timing.flipCard() + 2000;
         } else if (game.turn.battleCard === 2) {
             animateCard(game);
-            // Player gets more or less troops from the battle card
-            game.player2.troops += battleCard.show(cards, spaces[game.player2.space].zone);
+            // Player gets more or less soldiers from the battle card
+            game.player2.army += battleCard.show(cards, spaces[game.player2.space].zone);
+            game.player2.armyChange = true;
             // Update timing variable to delay score update
             game.timing.scoreUpdate = game.timing.flipCard() + 2000;
         } else {
@@ -49,8 +51,8 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
         }
         // Update scoreboard after turn animations have finished
         setTimeout(function() {
-            console.log("Player1: " + game.player1.troops);
-            console.log("Player2: " + game.player2.troops);
+            // console.log("Player1: " + game.player1.army);
+            // console.log("Player2: " + game.player2.army);
             scoreBoard.update(game);
         }, game.timing.scoreUpdate);
         

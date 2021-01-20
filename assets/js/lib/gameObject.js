@@ -3,6 +3,7 @@ import { spaces } from "./components/boardSpaceDetails.js";
 // Game object with details about game and players
 export let game = {
         spacesTotal: 30,
+        armyToWin: 100000,
         timing: {
             // Animation durations named in milliseconds
             dice: 2000,
@@ -16,7 +17,8 @@ export let game = {
             name: localStorage.getItem('player1'),
             alias: localStorage.getItem('alias1'),
             token: $('.gameboard__token--player1'),
-            troops: 10000,
+            army: 10000,
+            armyChange: false,
             space: 0, 
             position: function() {
                 return spaces[this.space];
@@ -26,7 +28,8 @@ export let game = {
             name: localStorage.getItem('player2'),
             alias: localStorage.getItem('alias2'),
             token: $('.gameboard__token--player2'),
-            troops: 10000,
+            army: 10000,
+            armyChange: false,
             space: 0, 
             position: function() {
                 return spaces[this.space];
@@ -68,8 +71,9 @@ export let game = {
                         this.battleCard = 1;
                     } else {
                         this.battleCard = 0;
-                        // Player gets standard amount of new troops
-                        game.player1.troops += 5000;
+                        // Player gets standard amount of new soldiers
+                        game.player1.army += 5000;
+                        game.player1.armyChange = true;
                     }
                 } else if (!this.player1 && this.diceRoll) {
                     // Calculate whether to animate xAxis first
@@ -86,8 +90,9 @@ export let game = {
                         this.battleCard = 2;
                     } else {
                         this.battleCard = 0;
-                        // Player gets standard amount of new troops
-                        game.player2.troops += 5000;
+                        // Player gets standard amount of new soldiers
+                        game.player2.army += 5000;
+                        game.player2.armyChange = true;
                     }
                 } else if (!this.diceRoll) {
                     // Place tokens before game starts

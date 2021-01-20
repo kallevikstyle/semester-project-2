@@ -1,45 +1,55 @@
+import { game } from "./gameObject.js";
+
 export const scoreBoard = {
     avatar1: $('.scoreboard__avatar--player1'),
     avatar2: $('.scoreboard__avatar--player2'),
-    statusPanel: $('.scoreboard__status-panel'),
+    titlePlayer1: $('.scoreboard__status-title.player1'),
+    titlePlayer2: $('.scoreboard__status-title.player2'),
+    armyPlayer1: $('.scoreboard__status-body--army-count.player1'),
+    armyPlayer2: $('.scoreboard__status-body--army-count.player2'),
+    winStatusPlayer1: $('.scoreboard__status-footer.player1'),
+    winStatusPlayer2: $('.scoreboard__status-footer.player2'),
+    winStatusMessage: function(army, container) {
+        let message = "";
+        if (army < game.armyToWin) {
+            message = `<p class="needMore">${game.armyToWin - army} more soldiers needed</p>`; 
+        } else {
+            message = `<p class="ready">Ready to challenge capital!</p>`;
+        }
+        // Display status message
+        container.html(message);
+    },
+    formatNumber: function(number) {
+        // Format numbers to international format
+        return new Intl.NumberFormat().format(number);
+    },
     setup: function(game) {
-        this.statusPanel.html(`
-            <!-- Player 1 -->
-            <div class="scoreboard__status scoreboard__status--player1">
-                <div class="scoreboard__status-header">
-                    <div class="player-badge">
-                        <span class="badge badge-pill badge-primary">Player 1</span>
-                    </div>
-                    <h3 class="scoreboard__status-title">${game.player1.name}</h3>
-                </div>
-                
-                <div class="scoreboard__status-body">
-                    <p><span class="scoreboard__status-body--army-count">${game.player1.troops}</span> soldiers</p>
-                </div>
-                <div class="scoreboard__status-footer">
-                    <p>need at least 90000 more</p>
-                </div>
-            </div>
-            <!-- Player 2 -->
-            <div class="scoreboard__status scoreboard__status--player2">
-                <div class="scoreboard__status-header">
-                    <div class="player-badge">
-                        <span class="badge badge-pill badge-secondary">Player 2</span>
-                    </div>
-                    <h3 class="scoreboard__status-title">${game.player2.name}</h3>
-                </div>
-                <div class="scoreboard__status-body">
-                    <p><span class="scoreboard__status-body--army-count">${game.player2.troops}</span> soldiers</p>
-                </div>
-                <div class="scoreboard__status-footer">
-                    <p>need at least 90000 more</p>
-                </div>
-            </div>
-        `);
+        // Insert player names
+        this.titlePlayer1.html(`${game.player1.name}`);
+        this.titlePlayer2.html(`${game.player2.name}`);
+        // Insert army count
+        this.armyPlayer1.html(`${this.formatNumber(game.player1.army)}`);
+        this.armyPlayer2.html(`${this.formatNumber(game.player2.army)}`);
+        // Insert win status message
+        this.winStatusMessage(game.player1.army, this.winStatusPlayer1);
+        this.winStatusMessage(game.player2.army, this.winStatusPlayer2);
     },
     update: function(game) {
-        // Make this function update only needed parts.
-        // Same goes for setup function
-        this.setup(game);
+        
+        // Update army count
+        if (game.player1.armyChange) {
+            this.armyPlayer1.html(`${this.formatNumber(game.player1.army)}`);
+            
+            // Update status message below army count
+            this.winStatusMessage(game.player1.army, this.winStatusPlayer1);
+            // Reset armyChange boolean
+            game.player1.armyChange = false;
+        } else if (game.player2.armyChange) {
+            this.armyPlayer2.html(`${this.formatNumber(game.player2.army)}`);
+            // Update status message below army count
+            this.winStatusMessage(game.player2.army, this.winStatusPlayer2);
+            // Reset armyChange boolean
+            game.player2.armyChange = false;
+        }
     }
 }

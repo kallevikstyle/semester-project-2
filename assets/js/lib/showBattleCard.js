@@ -17,6 +17,6 @@ export const battleCard = {
             <p class="battle-card-dismiss">(click to dismiss)</p>
         `);
         // Return troop loss or gain the card gives to the player
-        return battleCard.troops;
+        return battleCard.soldiers;
     }
 };

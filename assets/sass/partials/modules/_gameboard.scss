@@ -198,7 +198,7 @@
 			font-size: 1rem;
 		}
 		&-body {
-			// margin-top: 10px;
+			max-width: $scoreboardStatusPanelWidth / 2;
 			border-bottom: 1px solid $col-copy;
 			background-color: $col-copy;
 			color: $col-background;
@@ -213,7 +213,13 @@
 			}
 		}
 		&-footer {
-			color: $col-warning;
+			.needMore {
+				color: $col-warning;
+			}
+			.ready {
+				color: $col-highlight;
+			}
+			
 		}
 		&--player1 {
 			// border: 1px dotted gold;

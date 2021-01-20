@@ -70,6 +70,10 @@ export let game = {
                     // Check if player has landed on a battle card space
                     if (spaces[game.player1.space].battle) {
                         this.battleCard = 1;
+                    // Check if player can challenge capital
+                    } else if (spaces[game.player1.space].zone === "kingslanding") {
+                        
+
                     } else {
                         this.battleCard = 0;
                         // Player gets standard amount of new soldiers
@@ -89,6 +93,10 @@ export let game = {
                     // Check if player has landed on a battle card space
                     if (spaces[game.player2.space].battle) {
                         this.battleCard = 2;
+                    // Check if player can challenge capital
+                    } else if (spaces[game.player2.space].zone === "kingslanding") {
+                    
+
                     } else {
                         this.battleCard = 0;
                         // Player gets standard amount of new soldiers
@@ -145,9 +153,6 @@ export let game = {
                     // console.log("Player2: " + game.player2.army);
                     scoreBoard.update(game);
                 }, game.timing.scoreUpdate);
-                
-                // Switch turns
-                this.switchTurns(this.diceRoll);
             }
         }
     }

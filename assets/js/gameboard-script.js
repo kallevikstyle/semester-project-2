@@ -20,6 +20,8 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
     game.dice.addEventListener('click', function() {
         // Start new turn
         game.turn.start(animateToken, animateCard, battleCard, cards, scoreBoard);
+        // Switch turns
+        game.turn.switchTurns(game.turn.diceRoll);
     });
         
 

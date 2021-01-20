@@ -354,7 +354,7 @@ export const spaces = [
     {
         // Top left
         id: 26,
-        width: spaceGuide.standardWidth,
+        width: spaceGuide.largeWidth,
         top: function() {
             return 0 - (this.width / 2);	
         },

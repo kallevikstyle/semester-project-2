@@ -3,6 +3,7 @@ import { createBoardSpaces } from "./lib/boardSpaces.js";
 import { battleCard } from "./lib/battleCardMethods.js";
 import { cards } from "./lib/components/battleCardDetails.js";
 import { game } from "./lib/gameObject.js";
+import { turnStatus} from "./lib/centerPanel.js";
 import { scoreBoard } from "./lib/scoreBoard.js";
 import { checkWinner } from "./lib/checkWinner.js";
 // Animations
@@ -19,6 +20,8 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
     game.cards = cards;
     // Set up scoreboard
     scoreBoard.setup(game);
+    // Set up center panel
+    turnStatus.player(game);
     // Dice click event
     game.dice.addEventListener('click', function(event) {
         // Disable dice until next turn
@@ -38,7 +41,9 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
             checkWinner(game);
             // Switch turns
             game.turn.switchTurns(game.turn.diceRoll);
-            // Enable dice
+            turnStatus.player(game);
+            
+            // Enable dice for new turn
             event.target.offsetParent.style.zIndex = 1000;
         }, game.timing.scoreUpdate);
     });

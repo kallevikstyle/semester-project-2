@@ -133,12 +133,23 @@
 	height: $centerPanelHeight;
 	top: $centerPanelTop;
 	left: $centerPanelLeft;
+	text-align: center;
 
 	&__status {
 		// background-color: grey;
 		width: 160px;
 		height: 100%;
-		
+	}
+	&__turn {
+		margin-top: 16px;
+		font-size: 1.2rem;
+		font-style: italic;
+	}
+	&__action {
+		margin-top: 10px;
+		font-size: 1.6rem;
+		font-style: italic;
+		color: $col-highlight;
 	}
 	&__dice-container {
 		display: inline-block;
@@ -146,13 +157,6 @@
 		width: 70px;
 		height: 100%;
 
-	}
-	// FALLBACK DICE
-	.fallbackDice {
-		height: 70px;
-		width: 70px;
-		background-image: url('../js/lib/components/animated-dice/images/d1.png');
-		background-size: contain;
 	}
 }
 // --- Scoreboard ---

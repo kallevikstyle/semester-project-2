@@ -372,6 +372,7 @@ body ul {
   height: 70px;
   top: 310.5px;
   left: 423.5px;
+  text-align: center;
 }
 
 .center-panel__status {
@@ -379,18 +380,24 @@ body ul {
   height: 100%;
 }
 
+.center-panel__turn {
+  margin-top: 16px;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.center-panel__action {
+  margin-top: 10px;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: #E0CA02;
+}
+
 .center-panel__dice-container {
   display: inline-block;
   margin: 0 auto;
   width: 70px;
   height: 100%;
-}
-
-.center-panel .fallbackDice {
-  height: 70px;
-  width: 70px;
-  background-image: url("../js/lib/components/animated-dice/images/d1.png");
-  background-size: contain;
 }
 
 .scoreboard {

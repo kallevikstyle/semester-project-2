@@ -25,7 +25,7 @@
 		position: absolute;
 		border: 1px solid darken($col-copy, 30%);
 		width: $spaceContainerWidth;
-		height: $spaceContainerHeigth;
+		height: $spaceContainerHeight;
 		top: $spaceContainerTop;
 		left: $spaceContainerLeft;
 	}
@@ -64,7 +64,7 @@
 	&__card-stack {
 		position: absolute;
 		width: $battleCardWidth;
-		height: $battleCardHeigth;
+		height: $battleCardHeight;
 		top: $battleCardTop;
 		left: $battleCardLeft;
 	}
@@ -116,23 +116,23 @@
 			transition: all 1s;
 			transform: rotateY(-180deg);
 			width: $battleCardWidth * 2;
-			height: $battleCardHeigth * 2;	
+			height: $battleCardHeight * 2;	
 		}
 	}
 }
 
 
-	// --- Center panel ---
+// --- Center panel ---
 .center-panel {
 	position: absolute;
 	border: 1px solid darken($col-copy, 50%);
 	z-index: 1000;
 	display: flex;
 	flex-direction: row;
-	width: 410px;
-	height: 70px;
-	top: 310.5px;
-	left: 423.5px;
+	width: $centerPanelWidth;
+	height: $centerPanelHeight;
+	top: $centerPanelTop;
+	left: $centerPanelLeft;
 
 	&__status {
 		// background-color: grey;
@@ -155,6 +155,7 @@
 		background-size: contain;
 	}
 }
+// --- Scoreboard ---
 .scoreboard {
 	position: relative;
 	display: flex;
@@ -236,6 +237,36 @@
 			}
 		}
 	}
+}
 
+// --- Winner panel ---
+.winner-panel {
+	position: absolute;
+	background-color: $col-background;
+	color: $col-copy;
+	z-index: 2000;
+	// display: flex;
+	// flex-direction: row;
+	width: $winnerPanelWidth;
+	height: $winnerPanelHeight;
+	top: $winnerPanelTop;
+	left: $winnerPanelLeft;
+	border: 2px solid $col-highlight;
+	border-radius: 10px;
+	text-align: center;
+	
 
+	&__title {
+		color: $col-highlight;
+		border-bottom: 1px solid $col-highlight;
+		// background-color: $col-success;
+	}
+	&__text {
+		margin-top: 20px;
+		font-size: 1.2rem;
+	}
+	&__winner-name {
+		font-family: $font-brand;
+		font-size: 1.6rem;
+	}
 }

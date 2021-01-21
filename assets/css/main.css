@@ -465,3 +465,32 @@ body ul {
 .scoreboard__status--player2 .player-badge {
   text-align: right;
 }
+
+.winner-panel {
+  position: absolute;
+  background-color: #21211E;
+  color: #F0F0F0;
+  z-index: 2000;
+  width: 410px;
+  height: 220px;
+  top: 233px;
+  left: 423.5px;
+  border: 2px solid #E0CA02;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.winner-panel__title {
+  color: #E0CA02;
+  border-bottom: 1px solid #E0CA02;
+}
+
+.winner-panel__text {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+.winner-panel__winner-name {
+  font-family: "Cinzel", serif;
+  font-size: 1.6rem;
+}

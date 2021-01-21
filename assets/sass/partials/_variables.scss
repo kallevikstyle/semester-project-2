@@ -29,12 +29,22 @@ $gameboardHeight: 906px;
 
 // Board space container
 $spaceContainerWidth: 605px;
-$spaceContainerHeigth: 220px;
+$spaceContainerHeight: 220px;
 $spaceContainerTop: 233px;
 $spaceContainerLeft: 327px;
+// Center panel
+$centerPanelWidth: 410px;
+$centerPanelHeight: 70px;
+$centerPanelTop: 310.5px;
+$centerPanelLeft: 423.5px;
+// Winner panel
+$winnerPanelWidth: $centerPanelWidth;
+$winnerPanelHeight: $spaceContainerHeight;
+$winnerPanelTop: $spaceContainerTop;
+$winnerPanelLeft: 423.5px;
 // Battle cards container
 $battleCardWidth: 161px;
-$battleCardHeigth: 247px;
+$battleCardHeight: 247px;
 $battleCardTop: 521px;
 $battleCardLeft: 86px;
 // Scoreboard

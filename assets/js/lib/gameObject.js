@@ -20,7 +20,7 @@ export let game = {
             name: localStorage.getItem('player1'),
             alias: localStorage.getItem('alias1'),
             token: $('.gameboard__token--player1'),
-            army: 10000,
+            army: 80000,
             armyChange: false,
             space: 0, 
             position: function() {
@@ -31,7 +31,7 @@ export let game = {
             name: localStorage.getItem('player2'),
             alias: localStorage.getItem('alias2'),
             token: $('.gameboard__token--player2'),
-            army: 10000,
+            army: 80000,
             armyChange: false,
             space: 0, 
             position: function() {

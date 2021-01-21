@@ -4,6 +4,7 @@ import { battleCard } from "./lib/battleCardMethods.js";
 import { cards } from "./lib/components/battleCardDetails.js";
 import { game } from "./lib/gameObject.js";
 import { scoreBoard } from "./lib/scoreBoard.js";
+import { checkWinner } from "./lib/checkWinner.js";
 // Animations
 import { token as animateToken, battleCard as animateCard } from "./lib/animations.js";
 
@@ -23,15 +24,16 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
         game.turn.start();
         game.turn.getNextSpace();
         animateToken(game);
+        // Deal battle card
         battleCard.dealCard(game, animateCard);
         
         // Update scoreboard after turn animations have finished
         setTimeout(function() {
-            // console.log("Player1: " + game.player1.army);
-            // console.log("Player2: " + game.player2.army);
             scoreBoard.update(game);
         }, game.timing.scoreUpdate);
 
+        // Check if player has enough troops for capital
+        checkWinner(game);
         // Switch turns
         game.turn.switchTurns(game.turn.diceRoll);
     });

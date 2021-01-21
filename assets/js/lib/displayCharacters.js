@@ -22,6 +22,7 @@ const charactersMethods = {
         }
     },
 	eventListener: function(card, character) {
+        const playButton = $('.character-select__play-btn');
         // Create event listener for card
         card.click(function() {
             let selected;
@@ -37,6 +38,8 @@ const charactersMethods = {
                 }
                 card.removeClass();
                 card.addClass('card');
+                // Disable 'play' button
+                playButton.addClass('disabled');
             } else if (charactersMethods.howManySelected() === 2) {
                 // The user tries to select a 3rd character
                 console.log("You can not select more than 2 characters");
@@ -55,6 +58,8 @@ const charactersMethods = {
                     charactersMethods.selectedCharacters(1, character, selected);
                     card.addClass('card--player1');
                 }
+                // Enable 'play' button
+                playButton.removeClass('disabled');
                 
             } else if (charactersMethods.howManySelected() === 0) {
                 // Select player 1
@@ -63,7 +68,7 @@ const charactersMethods = {
                 card.addClass('card--selected');
                 card.addClass('card--player1');
             } else {
-                console.log("Sorry, there was an unexpected error... Please try again.")
+                alert("Sorry, there was an unexpected error... Please go back and try again.")
             }
         });
     },

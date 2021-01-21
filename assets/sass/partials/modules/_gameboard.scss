@@ -272,3 +272,14 @@
 		font-size: 1.6rem;
 	}
 }
+// Modal window if no players are selected
+#noPlayersSelected {
+	margin-top: 100px;
+	
+	.modal-content {
+		border: 1px solid $col-warning;
+	}
+	p {
+		font-size: 1.3rem;
+	}
+}

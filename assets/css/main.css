@@ -233,26 +233,6 @@ body ul {
   border-color: #D64A38;
 }
 
-.tooltip.danger .tooltip-inner {
-  background-color: #d9534f;
-}
-
-.tooltip.danger.top > .tooltip-arrow {
-  border-top-color: #d9534f;
-}
-
-.tooltip.danger.right > .tooltip-arrow {
-  border-right-color: #d9534f;
-}
-
-.tooltip.danger.bottom > .tooltip-arrow {
-  border-bottom-color: #d9534f;
-}
-
-.tooltip.danger.left > .tooltip-arrow {
-  border-left-color: #d9534f;
-}
-
 .gameboard {
   position: relative;
   width: 1200px;
@@ -521,4 +501,16 @@ body ul {
 .winner-panel__winner-name {
   font-family: "Cinzel", serif;
   font-size: 1.6rem;
+}
+
+#noPlayersSelected {
+  margin-top: 100px;
+}
+
+#noPlayersSelected .modal-content {
+  border: 1px solid #D64A38;
+}
+
+#noPlayersSelected p {
+  font-size: 1.3rem;
 }

@@ -57,6 +57,6 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
         
 
 } else {
-    // Create error handling
-    console.log("No players are selected. Please go back to home page and select players");
+    // Activate modal to display error message    
+    $('#noPlayersSelected').modal();
 }

@@ -72,10 +72,9 @@ export let game = {
                     // Check if player has landed on a battle card space
                     if (game.spaces[game.player1.space].battle) {
                         this.battleCard = 1;
-                    // Check if player can challenge capital
+                    // Player does not get new soldiers in Kings Landing
                     } else if (game.spaces[game.player1.space].zone === "kingslanding") {
-                        
-
+                        this.battleCard = 0;
                     } else {
                         this.battleCard = 0;
                         // Player gets standard amount of new soldiers
@@ -95,10 +94,9 @@ export let game = {
                     // Check if player has landed on a battle card space
                     if (game.spaces[game.player2.space].battle) {
                         this.battleCard = 2;
-                    // Check if player can challenge capital
+                    // Player does not get new soldiers in Kings Landing
                     } else if (game.spaces[game.player2.space].zone === "kingslanding") {
-                    
-
+                        this.battleCard = 0;
                     } else {
                         this.battleCard = 0;
                         // Player gets standard amount of new soldiers

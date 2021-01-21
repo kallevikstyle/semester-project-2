@@ -24,6 +24,7 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
     turnStatus.player(game);
     // Dice click event
     game.dice.addEventListener('click', function(event) {
+        turnStatus.action("Rolling...");
         // Disable dice until next turn
         event.target.offsetParent.style.zIndex = 0;
         // Start new turn
@@ -44,6 +45,7 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
             turnStatus.player(game);
             
             // Enable dice for new turn
+            turnStatus.action("Roll the dice!");
             event.target.offsetParent.style.zIndex = 1000;
         }, game.timing.scoreUpdate);
     });

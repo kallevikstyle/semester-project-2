@@ -19,5 +19,8 @@ export const turnStatus = {
             firstName = this.formatName(game.player2.name);
         }
         this.turnParagraph.html(`It's ${firstName} turn`);
+    },
+    action: function(text) {
+        this.actionParagraph.html(text);
     }
 }

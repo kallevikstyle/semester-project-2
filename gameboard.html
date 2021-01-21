@@ -96,18 +96,18 @@
             </section>
         </section>
         <!-- Modal if no players selected -->
-        <div class="modal" id="noPlayersSelected" tabindex="-1" role="dialog">
+        <div class="modal" id="noPlayersSelected" tabindex="-1" role="dialog" aria-labelledby="no-players-selected" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h2 class="modal-title">No players are selected</h2>
+                  <h2 class="modal-title" id="no-players-selected">No players are selected</h2>
                 </div>
                 <div class="modal-body">
                   <p>Oh no... You can't play Throne Wars without selecting any players. For the night is dark and full of terrors...</p>
                   <p>Please go to the start page and select two players!</p>
                 </div>
                 <div class="modal-footer">
-                  <a href="index.html" type="button" class="btn btn-danger">Go to start</a>
+                  <a href="index.html" type="button" class="btn btn-warning">Go to start</a>
                 </div>
               </div>
             </div>

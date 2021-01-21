@@ -471,6 +471,7 @@ body ul {
   background-color: #21211E;
   color: #F0F0F0;
   z-index: 2000;
+  display: none;
   width: 410px;
   height: 220px;
   top: 233px;

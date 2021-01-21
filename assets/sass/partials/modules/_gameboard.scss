@@ -245,8 +245,7 @@
 	background-color: $col-background;
 	color: $col-copy;
 	z-index: 2000;
-	// display: flex;
-	// flex-direction: row;
+	display: none;
 	width: $winnerPanelWidth;
 	height: $winnerPanelHeight;
 	top: $winnerPanelTop;
@@ -259,7 +258,6 @@
 	&__title {
 		color: $col-highlight;
 		border-bottom: 1px solid $col-highlight;
-		// background-color: $col-success;
 	}
 	&__text {
 		margin-top: 20px;

@@ -3,11 +3,15 @@ import { displayCharacters } from "./lib/displayCharacters.js";
 
 function displayCharacterCards(items) {
     // Get sorted array of characters
-    const characters = sortCharacters.createArray(items);
+    const characters = sortCharacters.createArray(items),
+        playButtonTooltip = $('.character-select__play-btn-tooltip');
     // Clear localStorage
     localStorage.clear();
     // Display playable characters on page
     displayCharacters(characters);
+    // Activate tooltip on play button    
+    playButtonTooltip.tooltip();
+    
     
 }
 

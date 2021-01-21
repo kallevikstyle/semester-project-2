@@ -24,7 +24,12 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
     turnStatus.player(game);
     // Dice click event
     game.dice.addEventListener('click', function(event) {
+        // Display board action
         turnStatus.action("Rolling...");
+        setTimeout(function() {
+            turnStatus.action("Moving...");
+        }, game.timing.dice);
+        
         // Disable dice until next turn
         event.target.offsetParent.style.zIndex = 0;
         // Start new turn

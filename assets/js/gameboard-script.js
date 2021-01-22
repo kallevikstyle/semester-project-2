@@ -59,6 +59,13 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
             
         }, game.timing.scoreUpdate);
     });
+    
+    // Set game mode
+    if (localStorage.getItem('gameMode') === 'singleplayer') {
+        game.player2.human = false;
+    } else if (localStorage.getItem('gameMode') === 'multiplayer') {
+        game.player2.human = true;
+    }
     // Decide which player will start
     game.turn.decideFirstTurn();
     game.narrative.toast('show');

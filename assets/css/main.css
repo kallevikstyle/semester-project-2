@@ -98,47 +98,23 @@ body ul {
   margin-bottom: 40px;
 }
 
-.dummyContent {
-  height: 400px;
-  background-color: grey;
-}
-
-.start-menu {
+.play-button {
   position: fixed;
-  z-index: 10;
   bottom: 0;
   left: 50%;
   margin-left: -100px;
-  height: 100px;
-}
-
-.start-menu__nav {
-  padding-left: 0;
-}
-
-.start-menu__nav .nav-item {
-  display: inline;
-}
-
-.start-menu__play {
-  margin: 0 auto;
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  z-index: 1000;
+  margin-bottom: -100px;
 }
 
-.start-menu__play span {
+.play-button span {
   display: inline-block;
   font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 50px;
-}
-
-.start-menu__instructions {
-  background-color: #21211E;
-  border-color: #717070;
-  margin-top: -46px;
-  margin-left: 10px;
+  margin-bottom: 100px;
 }
 
 .page-banner {
@@ -499,6 +475,16 @@ body ul {
 
 .scoreboard__status--player2 .player-badge {
   text-align: right;
+}
+
+.instructions-button {
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  z-index: 2000;
+  background-color: #21211E;
+  border-color: #717070;
+  margin-left: 10px;
 }
 
 .winner-panel {

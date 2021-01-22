@@ -1,44 +1,22 @@
-.dummyContent {
-    height: 400px;
-    background-color: grey;
-}
-.start-menu {
+.play-button {
     position: fixed;
-    z-index: 10;
     bottom: 0;
     left: 50%;
-    margin-left: -($start-menu-height);
-    height: $start-menu-height;
-    // @include dummyBorder(pink);
+    margin-left: -($play-button-height / 2);
+    width: $play-button-height;
+    height: $play-button-height;
+    border-radius: 50%;
+    z-index: 1000;
+    margin-bottom: -($play-button-height / 2);
 
-    &__nav {
-        // @include dummyBorder($yellow)
-        padding-left: 0;
-        
-        .nav-item {
-            display: inline;
-        }
-    }
-    &__play {
-        margin: 0 auto;
-        width: $start-menu-height*2;
-        height: $start-menu-height*2;
-        border-radius: 50%;
-
-        span {
-            display: inline-block;
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: $start-menu-height/2;
-        }
-    }
-    &__instructions {
-        background-color: $col-background;
-        border-color: darken($col-copy, 50%);
-        margin-top: -($start-menu-height/2)+4px;
-        margin-left: 10px;
+    span {
+        display: inline-block;
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: $play-button-height / 2;
     }
 }
+
 .page-banner {
     height: 100vh;
     background-image: url('../images/darkforest-2000px.jpg');

@@ -296,12 +296,17 @@ body ul {
   background-color: #F0F0F0;
 }
 
-.gameboard__space--dragon {
-  background-color: #D64A38;
-}
-
 .gameboard__space--kingslanding {
   background-color: #E0CA02;
+}
+
+.gameboard__space--battle, .gameboard__space--dragon {
+  background-color: #8b291d;
+  border: none;
+  background-image: url("../images/icon-battle.png");
+  background-size: 85%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .gameboard__card-stack {

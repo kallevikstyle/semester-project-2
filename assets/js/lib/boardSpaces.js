@@ -5,6 +5,10 @@ export const createBoardSpaces = {
             const newSpace = $('<div></div>');
 
             newSpace.addClass(`gameboard__space gameboard__space--${spaces[i].zone}`);
+            // Add battle symbol if battle card space
+            if (spaces[i].battleLogo) {
+                newSpace.addClass('gameboard__space--battle');
+            }
             newSpace.css({
                 'width': `${spaces[i].width}px`,
                 'height': `${spaces[i].width}px`,

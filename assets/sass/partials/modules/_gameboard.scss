@@ -53,11 +53,17 @@
 		&--castleblack {
 			background-color: $col-copy;
 		}
-		&--dragon {
-			background-color: $col-warning;
-		}
 		&--kingslanding {
 			background-color: $col-highlight;
+		}
+		&--battle,
+		&--dragon {
+			background-color: darken($col-warning, 20%);
+			border: none;
+			background-image: url('../images/icon-battle.png');
+			background-size: 85%;
+			background-position: center;
+			background-repeat: no-repeat;
 		}
 	}
 	// Battle cards

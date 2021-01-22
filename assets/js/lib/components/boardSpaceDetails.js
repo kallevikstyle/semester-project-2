@@ -65,6 +65,7 @@ export const spaces = [
         zone: 'meereen',
         zoneText: 'Meereen',
         battle: true,
+        battleLogo: true,
         xAxisFirst: true
     },
     {
@@ -135,6 +136,7 @@ export const spaces = [
         zone: 'winterfell',
         zoneText: 'Winterfell',
         battle: true,
+        battleLogo: true,
         xAxisFirst: true
     },
     {
@@ -206,6 +208,7 @@ export const spaces = [
         zone: 'castleblack',
         zoneText: 'Castle Black',
         battle: true,
+        battleLogo: true,
         xAxisFirst: false
     },
     {
@@ -277,6 +280,7 @@ export const spaces = [
         zone: 'hardhome',
         zoneText: 'Hardhome',
         battle: true,
+        battleLogo: true,
         xAxisFirst: true
     },
     {
@@ -347,6 +351,7 @@ export const spaces = [
         zone: 'sunspear',
         zoneText: 'Sunspear',
         battle: true,
+        battleLogo: true,
         xAxisFirst: true
     },
     {

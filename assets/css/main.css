@@ -301,7 +301,7 @@ body ul {
 }
 
 .gameboard__space--battle, .gameboard__space--dragon {
-  background-color: #8b291d;
+  background-color: #a03021;
   border: none;
   background-image: url("../images/icon-battle.png");
   background-size: 85%;

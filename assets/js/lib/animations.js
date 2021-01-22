@@ -26,13 +26,14 @@ export function battleCard(game) {
             left: `${(windowWidth / 2)}px`,
             top: `-40vh`
         }, "fast");
-        // Click event to close card
-        cardInner.click(function() {
-            cardInner.removeClass('gameboard__battle-card-inner--flip');
-            cardInner.animate({
-                left: `0px`,
-                top: `0px`
-            }, 50);
-        });
     }, game.timing.flipCard());
+
+    // Click event to close card
+    cardInner.click(function() {
+        cardInner.removeClass('gameboard__battle-card-inner--flip');
+        cardInner.animate({
+            left: `0px`,
+            top: `0px`
+        }, 50);
+    });
 }

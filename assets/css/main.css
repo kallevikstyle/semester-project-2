@@ -362,6 +362,29 @@ body ul {
   height: 494px;
 }
 
+.gameboard__narrative {
+  position: absolute;
+  color: #21211E;
+  top: 20px;
+  right: 20px;
+}
+
+.gameboard__narrative-title {
+  font-size: 1.2rem;
+}
+
+.gameboard__narrative small {
+  color: #017336;
+}
+
+.gameboard__narrative .loss {
+  color: #D64A38;
+}
+
+.gameboard__narrative .gain {
+  color: #017336;
+}
+
 .center-panel {
   position: absolute;
   border: 1px solid #717070;

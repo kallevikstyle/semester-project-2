@@ -119,6 +119,26 @@
 			height: $battleCardHeight * 2;	
 		}
 	}
+	&__narrative {
+		position: absolute;
+		color: $col-background;
+		top: 20px;
+		right: 20px;
+		
+		&-title {
+			// color: $col-warning;
+			font-size: 1.2rem;
+		}
+		small {
+			color: $col-success;
+		}
+		.loss {
+			color: $col-warning;
+		}
+		.gain {
+			color: $col-success;
+		}
+	}
 }
 
 

@@ -20,19 +20,26 @@ export const battleCard = {
         return battleCard.soldiers;
     },
     dealCard: function(game, animateCard) {
+        let soldiers = 0;
         // Check if player has landed on a battle card space
         if (game.turn.battleCard === 1) {
             animateCard(game);
             // Player gets more or less soldiers from the battle card
-            game.player1.army += this.show(game.cards, game.spaces[game.player1.space].zone);
+            soldiers = this.show(game.cards, game.spaces[game.player1.space].zone);
+            game.player1.army += soldiers;
             game.player1.armyChange = true;
+            // Update narrative
+            game.turn.updateNarrative(game.player1, game.spaces[game.player1.space].zoneText, soldiers);
             // Update timing variable to delay score update
             game.timing.scoreUpdate = game.timing.flipCard() + 2000;
         } else if (game.turn.battleCard === 2) {
             animateCard(game);
             // Player gets more or less soldiers from the battle card
-            game.player2.army += this.show(game.cards, game.spaces[game.player2.space].zone);
+            soldiers = this.show(game.cards, game.spaces[game.player2.space].zone);
+            game.player2.army += soldiers;
             game.player2.armyChange = true;
+            // Update narrative
+            game.turn.updateNarrative(game.player2, game.spaces[game.player2.space].zoneText, soldiers);
             // Update timing variable to delay score update
             game.timing.scoreUpdate = game.timing.flipCard() + 2000;
         } else {

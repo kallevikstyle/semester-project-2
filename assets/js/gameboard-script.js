@@ -9,7 +9,6 @@ import { checkWinner } from "./lib/checkWinner.js";
 // Animations
 import { token as animateToken, battleCard as animateCard } from "./lib/animations.js";
 
-
 // Check if players exist in localStorage
 if (localStorage.getItem('player1') && localStorage.getItem('player2') && localStorage.getItem('alias1') && localStorage.getItem('alias2')) {
     // Place spaces on board
@@ -24,6 +23,8 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
     turnStatus.player(game);
     // Dice click event
     game.dice.addEventListener('click', function(event) {
+        // Hide narrative
+        game.narrative.toast('hide');
         // Display board action
         turnStatus.action("Rolling...");
         setTimeout(function() {
@@ -43,12 +44,13 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
         setTimeout(function() {
             // Update scoreboard
             scoreBoard.update(game);
+            // Show narrative
+            game.narrative.toast('show');
             // Check if player has enough troops for capital
             checkWinner(game);
             // Switch turns
             game.turn.switchTurns(game.turn.diceRoll);
             turnStatus.player(game);
-            
             // Enable dice for new turn
             turnStatus.action("Roll the dice!");
             event.target.offsetParent.style.zIndex = 1000;

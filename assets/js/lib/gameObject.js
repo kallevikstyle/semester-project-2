@@ -3,9 +3,13 @@ import { spaces } from "./components/boardSpaceDetails.js";
 // Game object with details about game and players
 export let game = {
         dice: document.querySelector('animated-dice'),
+        narrative: $('.gameboard__narrative'),
+        narrativeTitle: $('.gameboard__narrative-title'),
+        narrativeText: $('.gameboard__narrative-text'),
         spacesTotal: 30,
         spaces: spaces,
         cards: [],
+        standardArmyGain: 5000,
         armyToWin: 100000,
         timing: {
             // Animation durations named in milliseconds
@@ -46,6 +50,21 @@ export let game = {
             moveLeft: 0,
             xAxisFirst: true,
             battleCard: 0,
+            updateNarrative: function(player, zone, soldiers) {
+                let armyChange = 0;
+                if (soldiers < 0) {
+                    armyChange = `lost <span class="loss">${Math.abs(soldiers)}</span>`;
+                } else if (soldiers > 0) {
+                    armyChange = `gained <span class="gain">${soldiers}</span>`;
+                } else {
+                    armyChange = `did not gain any`;
+                }
+                setTimeout(function() {
+                    game.narrativeTitle.html(`${player.name}`);
+                    game.narrativeText.html(`${player.alias} went to ${zone} and ${armyChange} soldiers`)
+                }, 1000);
+                
+            },
             switchTurns: function(diceRoll) {
                 if (diceRoll === 6) {
                     // The player has rolled a 6 and gets another turn
@@ -75,11 +94,17 @@ export let game = {
                     // Player does not get new soldiers in Kings Landing
                     } else if (game.spaces[game.player1.space].zone === "kingslanding") {
                         this.battleCard = 0;
+                        // Update narrative
+                        this.updateNarrative(game.player1, game.spaces[game.player1.space].zoneText, 0);
                     } else {
                         this.battleCard = 0;
                         // Player gets standard amount of new soldiers
-                        game.player1.army += 5000;
+                        game.player1.army += game.standardArmyGain;
                         game.player1.armyChange = true;
+                        // Update narrative
+                        this.updateNarrative(game.player1, game.spaces[game.player1.space].zoneText, game.standardArmyGain);
+
+
                     }
                 } else if (!this.player1 && this.diceRoll) {
                     // Calculate whether to animate xAxis first
@@ -97,11 +122,15 @@ export let game = {
                     // Player does not get new soldiers in Kings Landing
                     } else if (game.spaces[game.player2.space].zone === "kingslanding") {
                         this.battleCard = 0;
+                        // Update narrative
+                        this.updateNarrative(game.player1, game.spaces[game.player1.space].zoneText, 0);
                     } else {
                         this.battleCard = 0;
                         // Player gets standard amount of new soldiers
-                        game.player2.army += 5000;
+                        game.player2.army += game.standardArmyGain;
                         game.player2.armyChange = true;
+                        // Update narrative
+                        this.updateNarrative(game.player2, game.spaces[game.player2.space].zoneText, game.standardArmyGain);
                     }
                 } else if (!this.diceRoll) {
                     // Place tokens before game starts

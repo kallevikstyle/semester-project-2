@@ -47,10 +47,9 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
             // Show narrative
             game.narrative.toast('show');
             // Switch turns
-            game.turn.switchTurns(game.turn.diceRoll);
+            turnStatus.action(game.turn.switchTurns(game.turn.diceRoll));
             turnStatus.player(game);
             // Enable dice for new turn
-            turnStatus.action("Roll the dice!");
             event.target.offsetParent.style.zIndex = 1000;
             // Autoplay if player2 is computer
             if (!game.turn.player1 && !game.player2.human) {
@@ -59,7 +58,7 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
             
         }, game.timing.scoreUpdate);
     });
-    
+
     // Set game mode
     if (localStorage.getItem('gameMode') === 'singleplayer') {
         game.player2.human = false;

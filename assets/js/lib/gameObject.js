@@ -103,8 +103,10 @@ export let game = {
                 if (diceRoll === 6) {
                     // The player has rolled a 6 and gets another turn
                     this.player1 = this.player1;
+                    return "Roll dice again!";
                 } else {
                     this.player1 = !this.player1;
+                    return "Roll the dice!";
                 }
             },
             getNextSpace: function() {
@@ -187,7 +189,7 @@ export let game = {
                 this.diceRoll = Number(game.dice.dataset.diceRoll);
                 // TEST DICE ---
                 // animateCard(game);
-                // this.diceRoll = 13;
+                // this.diceRoll = 6;
                 // TEST DICE END ----
                 
             }

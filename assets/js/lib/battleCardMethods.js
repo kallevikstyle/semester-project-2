@@ -33,7 +33,10 @@ export const battleCard = {
             // Update timing variable to delay score update
             game.timing.scoreUpdate = game.timing.flipCard() + 2000;
         } else if (game.turn.battleCard === 2) {
-            animateCard(game);
+            // Show battle card ONLY if player 2 is human and NOT a computer player
+            if (game.player2.human) {
+                animateCard(game);
+            }
             // Player gets more or less soldiers from the battle card
             soldiers = this.show(game.cards, game.spaces[game.player2.space].zone);
             game.player2.army += soldiers;

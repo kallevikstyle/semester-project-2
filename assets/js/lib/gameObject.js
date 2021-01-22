@@ -17,7 +17,8 @@ export let game = {
             moveToken: 2000,
             flipCard: function(){
                 return this.dice + this.moveToken + 400;
-            }, 
+            },
+            computerDelay: 4000,
             scoreUpdate: 0
         },
         player1: {
@@ -35,6 +36,7 @@ export let game = {
             name: localStorage.getItem('player2'),
             alias: localStorage.getItem('alias2'),
             token: $('.gameboard__token--player2'),
+            human: false,
             army: 80000,
             armyChange: false,
             space: 0, 
@@ -66,6 +68,36 @@ export let game = {
                     game.narrativeText.html(`${player.alias} went to ${zone} and ${armyChange}`)
                 }, 1000);
                 
+            },
+            autoPlayer: function() {
+                // Simulate click on dice (necessary to access shadowRoot in order to generate diceRoll)
+                const dice = game.dice.shadowRoot.querySelector('.dice'),
+                    centerPanel = document.querySelector('.center-panel');
+
+                // Disable dice against manual click
+                centerPanel.style.zIndex = 0;
+                // Auto roll dice with delay
+                setTimeout(function() {
+                    dice.click();
+                }, game.timing.computerDelay);
+                
+            },
+            decideFirstTurn: function() {
+                let player = '';
+                this.player1 = Math.random() < 0.5;
+
+                if (this.player1) {
+                    player = game.player1.name;
+                } else if (!this.player1 && !game.player2.human) {
+                    player = game.player2.name;
+                    // Start autoplayer turn
+                    this.autoPlayer();
+                } else {
+                    player = game.player2.name;
+                }
+                game.narrativeTitle.html(`Brace yourself!`);
+                game.narrativeText.html(`The Throne Wars are about to start, and the Gods have decided that <span class="gain">${player}</span> will get the first turn.`)
+
             },
             switchTurns: function(diceRoll) {
                 if (diceRoll === 6) {

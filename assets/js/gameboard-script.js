@@ -19,8 +19,7 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
     game.cards = cards;
     // Set up scoreboard
     scoreBoard.setup(game);
-    // Set up center panel
-    turnStatus.player(game);
+    
     // Dice click event
     game.dice.addEventListener('click', function(event) {
         // Hide narrative
@@ -30,7 +29,6 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
         setTimeout(function() {
             turnStatus.action("Moving...");
         }, game.timing.dice);
-        
         // Disable dice until next turn
         event.target.offsetParent.style.zIndex = 0;
         // Start new turn
@@ -54,8 +52,19 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
             // Enable dice for new turn
             turnStatus.action("Roll the dice!");
             event.target.offsetParent.style.zIndex = 1000;
+            // Autoplay if player2 is computer
+            if (!game.turn.player1 && !game.player2.human) {
+                game.turn.autoPlayer();
+            }
+            
         }, game.timing.scoreUpdate);
     });
+    // Decide which player will start
+    game.turn.decideFirstTurn();
+    game.narrative.toast('show');
+    // Set up center panel
+    turnStatus.player(game);
+    
         
 
 } else {

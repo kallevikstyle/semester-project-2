@@ -53,15 +53,17 @@ export let game = {
             updateNarrative: function(player, zone, soldiers) {
                 let armyChange = 0;
                 if (soldiers < 0) {
-                    armyChange = `lost <span class="loss">${Math.abs(soldiers)}</span>`;
+                    armyChange = `lost <span class="loss">${Math.abs(soldiers)}</span> soldiers`;
                 } else if (soldiers > 0) {
-                    armyChange = `gained <span class="gain">${soldiers}</span>`;
+                    armyChange = `gained <span class="gain">${soldiers}</span> soldiers`;
+                } else if (soldiers === 0) {
+                    armyChange = `did not gain any soldiers`;
                 } else {
-                    armyChange = `did not gain any`;
+                    armyChange = `captured the throne! ${player.name} is the winner!`;
                 }
                 setTimeout(function() {
                     game.narrativeTitle.html(`${player.name}`);
-                    game.narrativeText.html(`${player.alias} went to ${zone} and ${armyChange} soldiers`)
+                    game.narrativeText.html(`${player.alias} went to ${zone} and ${armyChange}`)
                 }, 1000);
                 
             },

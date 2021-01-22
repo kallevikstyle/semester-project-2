@@ -44,10 +44,10 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
         setTimeout(function() {
             // Update scoreboard
             scoreBoard.update(game);
-            // Show narrative
-            game.narrative.toast('show');
             // Check if player has enough troops for capital
             checkWinner(game);
+            // Show narrative
+            game.narrative.toast('show');
             // Switch turns
             game.turn.switchTurns(game.turn.diceRoll);
             turnStatus.player(game);

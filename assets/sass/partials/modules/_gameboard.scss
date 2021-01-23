@@ -65,6 +65,9 @@
 			background-position: center;
 			background-repeat: no-repeat;
 		}
+		&--dragon {
+			border: 4px solid $col-success;
+		}
 	}
 	// Battle cards
 	&__card-stack {
@@ -268,16 +271,49 @@
 		}
 	}
 }
-// Instructions button
-.instructions-button {
-	position: fixed;
-	bottom: 0;
-	right: 50px;
-	z-index: 2000;
-	background-color: $col-background;
-	border-color: darken($col-copy, 50%);
-	margin-left: 10px;
+
+// --- Instructions ---
+.instructions {
+
+	// Instructions button
+	&__button {
+		position: fixed;
+		bottom: 0;
+		right: 50px;
+		z-index: 2000;
+		background-color: $col-background;
+		// border-color: darken($col-copy, 50%);
+		border-color: $col-highlight;
+		margin-left: 10px;
+	}
+	&__board-spaces {
+		color: $col-copy;
+		
+	}
+	&__space {
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+
+		&--start {
+			@extend .gameboard__space--start;
+		}
+		&--regular {
+			@extend .gameboard__space--meereen;
+		}
+		&--battle {
+			@extend .gameboard__space--battle;
+		}
+		&--dragon {
+			@extend .gameboard__space--dragon;
+		}
+		&--kingslanding {
+			@extend .gameboard__space--kingslanding;
+		}
+
+	}
 }
+
 
 // --- Winner panel ---
 .winner-panel {

@@ -103,12 +103,12 @@
                 <div class="scoreboard__avatar scoreboard__avatar--player2"></div>
             </section>
             <!-- Instructions button -->
-            <div>
-                <button type="button" class="instructions-button btn btn-primary" data-toggle="modal" data-target="#gameInstructions">
+            <section class="instructions">
+                <button type="button" class="instructions__button btn btn-primary" data-toggle="modal" data-target="#gameInstructions">
                     Instructions
                 </button>
 
-                <!-- Modal -->
+                <!-- Instructions modal -->
                 <div class="modal" id="gameInstructions" tabindex="-1" role="dialog" aria-labelledby="instructionsTitle" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -119,14 +119,59 @@
                         </button>
                         </div>
                         <div class="modal-body">
-                        <h3>Goal</h3>
-                        <p>In this game two army chiefs from the Game of Thrones universe are up against each other in a battle to capture the throne in King's Landing. In order to successfully challenge the capital you have to have an army of at least 100&nbsp;000 soldiers. 
-
-                        </p>
-                        <h3>Board spaces</h3>
-                        <p>Bla</p>
-                        <h3>How to win</h3>
-                        <p>diBla</p>
+                            <h3>Goal</h3>
+                            <p>In this game, two players will take on the role of a character from the Game of Thrones universe and race each other in a battle to capture the throne in King's Landing. In order to successfully challenge the capital you need to have an army big enough to defeat Queen Cersei Lannister's army. If you are the first player to show up in King's landing with an army of at least 100&nbsp;000 soldiers, you are the true winner!</p>
+                            <!-- Board spaces -->
+                            <h3>Board spaces</h3>
+                            <table class="instructions__board-spaces table table-borderless">
+                                <thead>
+                                <tr>
+                                    <th>Space</th>
+                                    <th>Description</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        <div class="instructions__space instructions__space--start"></div>
+                                    </th>
+                                    <td>Start</td>
+                                    <td>You receive 10&nbsp;000 soldiers.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <div class="instructions__space instructions__space--regular"></div>
+                                    </th>
+                                    <td>Regular space</td>
+                                    <td>Each of the five main zones on the gameboard has four regular spaces. You will receive 5000 soldiers.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <div class="instructions__space instructions__space--battle"></div>
+                                    </th>
+                                    <td>Battle space</td>
+                                    <td>In each of the five zones on the gameboard there is a battle space. When you land on one, you will draw a battle card. You may lose soldiers, but you may also get lucky and gain soldiers.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <div class="instructions__space instructions__space--dragon"></div>
+                                    </th>
+                                    <td>Dragon's Den</td>
+                                    <td>You better not land on this space. There are dragons here, and they will cost you 10&nbsp;000 soldiers.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <div class="instructions__space instructions__space--kingslanding"></div>
+                                    </th>
+                                    <td>The capital</td>
+                                    <td>This is the goal of your journey, but you must come here with at least 100&nbsp;000 soldiers to win the game. If you don't have enough soldiers, nothing will happen here.</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3>How to win</h3>
+                            <p>The first player that reaches the capital with at least 100&nbsp;000 soldiers has won the game.</p>
                         </div>
                         <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -134,7 +179,7 @@
                     </div>
                     </div>
                 </div>
-            </div>
+            </section>
             
             <!-- Winner panel -->
             <section class="winner-panel">

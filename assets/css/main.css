@@ -255,11 +255,11 @@ body ul {
   border-radius: 50%;
 }
 
-.gameboard__space--start {
+.gameboard__space--start, .instructions__space--start {
   background-color: #017336;
 }
 
-.gameboard__space--meereen, .gameboard__space--sunspear {
+.gameboard__space--meereen, .instructions__space--regular, .gameboard__space--sunspear {
   background-color: #494942;
   border: 1px solid #F0F0F0;
 }
@@ -272,17 +272,21 @@ body ul {
   background-color: #F0F0F0;
 }
 
-.gameboard__space--kingslanding {
+.gameboard__space--kingslanding, .instructions__space--kingslanding {
   background-color: #E0CA02;
 }
 
-.gameboard__space--battle, .gameboard__space--dragon {
+.gameboard__space--battle, .instructions__space--battle, .gameboard__space--dragon, .instructions__space--dragon {
   background-color: #a03021;
   border: none;
   background-image: url("../images/icon-battle.png");
   background-size: 85%;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.gameboard__space--dragon, .instructions__space--dragon {
+  border: 4px solid #017336;
 }
 
 .gameboard__card-stack {
@@ -477,14 +481,24 @@ body ul {
   text-align: right;
 }
 
-.instructions-button {
+.instructions__button {
   position: fixed;
   bottom: 0;
   right: 50px;
   z-index: 2000;
   background-color: #21211E;
-  border-color: #717070;
+  border-color: #E0CA02;
   margin-left: 10px;
+}
+
+.instructions__board-spaces {
+  color: #F0F0F0;
+}
+
+.instructions__space {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
 .winner-panel {

@@ -191,7 +191,7 @@ export let game = {
                 this.diceRoll = Number(game.dice.dataset.diceRoll);
                 // TEST DICE ---
                 // animateCard(game);
-                this.diceRoll = 3;
+                // this.diceRoll = 3;
                 // TEST DICE END ----
                 
             }

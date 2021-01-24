@@ -24,6 +24,9 @@ export const scoreBoard = {
         return new Intl.NumberFormat().format(number);
     },
     setup: function(game) {
+        // Insert player avatars
+        this.avatar1.html(`<img src="assets/images/characters/${game.player1.avatar}" alt="${game.player1.name}">`);
+        this.avatar2.html(`<img src="assets/images/characters/${game.player2.avatar}" alt="${game.player2.name}">`);
         // Insert player names
         this.titlePlayer1.html(`${game.player1.name}`);
         this.titlePlayer2.html(`${game.player2.name}`);

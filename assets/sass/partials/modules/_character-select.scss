@@ -17,6 +17,10 @@
             border-radius: 2px;
             text-align: center;
 
+            &-img-top {
+                height: 200px;
+                object-fit: contain;
+            }
             &-title {
                 font-size: 1.3rem;
                 color: $col-copy;
@@ -25,12 +29,6 @@
                 font-size: 1rem;
                 color: lighten($col-background, 50%);
 
-                &:before {
-                    content: "\00AB";
-                }
-                &:after {
-                    content: "\00BB";
-                }
             }
             &-text {
                 font-size: 1.2rem;

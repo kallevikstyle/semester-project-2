@@ -24,6 +24,7 @@ export let game = {
         player1: {
             name: localStorage.getItem('player1'),
             alias: localStorage.getItem('alias1'),
+            avatar: localStorage.getItem('avatar1'),
             token: $('.gameboard__token--player1'),
             army: 80000,
             armyChange: false,
@@ -35,6 +36,7 @@ export let game = {
         player2: {
             name: localStorage.getItem('player2'),
             alias: localStorage.getItem('alias2'),
+            avatar: localStorage.getItem('avatar2'),
             token: $('.gameboard__token--player2'),
             human: false,
             army: 80000,

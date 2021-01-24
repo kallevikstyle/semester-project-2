@@ -5,7 +5,7 @@ export const sortCharacters = {
         },
         pickRandomAlias: function(items) {
             // Pick a random alias for each character name
-            return items[Math.floor(Math.random() * items.length)];
+            return `&laquo;${items[Math.floor(Math.random() * items.length)]}&raquo;`;
 
         },
         createArray: function(data) {
@@ -18,7 +18,8 @@ export const sortCharacters = {
                     id: item.Id,
                     name: item.Name,
                     alias: sortCharacters.pickRandomAlias(item.Aliases),
-                    born: item.Born
+                    born: item.Born,
+                    img: item.img
                 };
             
                 playable.push(itemObj);

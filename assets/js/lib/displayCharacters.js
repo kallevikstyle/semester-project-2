@@ -16,9 +16,11 @@ const charactersMethods = {
         if (player > 0 && selected) {
             localStorage.setItem(`player${player}`, character.name);
             localStorage.setItem(`alias${player}`, character.alias);
+            localStorage.setItem(`avatar${player}`, character.img);
         } else {
             localStorage.removeItem(`player${player}`);
             localStorage.removeItem(`alias${player}`);
+            localStorage.removeItem(`avatar${player}`);
         }
     },
 	eventListener: function(card, character) {
@@ -82,13 +84,13 @@ const charactersMethods = {
 			const card = $('<div></div>'),
 				imgTop = $('<img>'),
 				cardBody = $('<div></div>');
-
+            
 			// Add classes and attributes to elements
             card.addClass(`card`);
             card.attr('id', `character-${items[i].id}`);
 			imgTop.addClass('card-img-top');
 			cardBody.addClass('card-body');
-			imgTop.attr(`src`, `https://via.placeholder.com/200`);
+			imgTop.attr(`src`, `assets/images/characters/${items[i].img}`);
 			imgTop.attr(`alt`, `Character placeholder`);
 			
 			// Append elements

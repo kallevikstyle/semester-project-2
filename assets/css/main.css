@@ -182,6 +182,11 @@ body ul {
   text-align: center;
 }
 
+.character-select__card-container .card-img-top {
+  height: 200px;
+  object-fit: contain;
+}
+
 .character-select__card-container .card-title {
   font-size: 1.3rem;
   color: #F0F0F0;
@@ -190,14 +195,6 @@ body ul {
 .character-select__card-container .card-alias {
   font-size: 1rem;
   color: #a4a49a;
-}
-
-.character-select__card-container .card-alias:before {
-  content: "\00AB";
-}
-
-.character-select__card-container .card-alias:after {
-  content: "\00BB";
 }
 
 .character-select__card-container .card-text {
@@ -429,8 +426,13 @@ body ul {
 
 .scoreboard__avatar {
   width: 100px;
-  height: 100px;
-  background-color: dodgerblue;
+  border-radius: 10px;
+  background-color: #56564f;
+}
+
+.scoreboard__avatar img {
+  width: 100%;
+  height: auto;
 }
 
 .scoreboard__status-panel {

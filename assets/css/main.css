@@ -27,6 +27,25 @@ body ul {
   margin: 0;
 }
 
+.main-section {
+  height: 100vh;
+  max-width: 2000px;
+  margin: 0 auto;
+  background-image: url("../images/darkforest-2000px.jpg");
+  background-position: center;
+  padding-top: 40px;
+}
+
+.main-section__title {
+  position: absolute;
+  left: -1000px;
+}
+
+.main-section__logo {
+  margin-left: 10%;
+  height: 120px;
+}
+
 .btn {
   font-family: "Cinzel", serif;
 }
@@ -117,24 +136,7 @@ body ul {
   margin-bottom: 100px;
 }
 
-.page-banner {
-  height: 100vh;
-  background-image: url("../images/darkforest-2000px.jpg");
-  background-position: center;
-  padding-top: 40px;
-}
-
-.page-banner__title {
-  position: absolute;
-  left: -1000px;
-}
-
-.page-banner__logo {
-  margin-left: 10%;
-  height: 120px;
-}
-
-.page-banner__blurb {
+.main-section__blurb {
   text-align: center;
   font-size: 1.3rem;
   margin-top: 40px;
@@ -142,12 +144,12 @@ body ul {
   margin-left: 20%;
 }
 
-.page-banner__blurb span {
+.main-section__blurb span {
   font-size: 2rem;
   border-bottom: 1px dashed #E0CA02;
 }
 
-.page-banner__banner-img {
+.main-section__banner-img {
   max-width: 1200px;
   height: 300px;
   margin: 0 auto;

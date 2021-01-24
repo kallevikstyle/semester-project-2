@@ -20,6 +20,22 @@ body {
         margin: 0;
     }
 }
+.main-section {
+    height: 100vh;
+    max-width: 2000px;
+    margin: 0 auto;
+    background-image: url('../images/darkforest-2000px.jpg');
+    background-position: center;
+    padding-top: 40px;
+    &__title {
+        position: absolute;
+        left: -1000px;
+     }
+    &__logo {
+        margin-left: 10%;
+        height: 120px;
+    }
+}
 
 // Buttons
 .btn {

@@ -41,6 +41,10 @@ body {
 .btn {
     font-family: $font-brand;
 }
+.btn-primary {
+    background-color: $col-background;
+	border-color: $col-highlight;
+}
 .btn-danger {
     background-color: $col-warning;
 }

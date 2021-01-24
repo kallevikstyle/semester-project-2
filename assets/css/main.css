@@ -50,6 +50,11 @@ body ul {
   font-family: "Cinzel", serif;
 }
 
+.btn-primary {
+  background-color: #21211E;
+  border-color: #E0CA02;
+}
+
 .btn-danger {
   background-color: #D64A38;
 }
@@ -485,11 +490,9 @@ body ul {
 
 .instructions__button {
   position: fixed;
-  bottom: 0;
+  bottom: 5px;
   right: 50px;
   z-index: 2000;
-  background-color: #21211E;
-  border-color: #E0CA02;
   margin-left: 10px;
 }
 
@@ -543,4 +546,35 @@ body ul {
 
 #noPlayersSelected p {
   font-size: 1.3rem;
+}
+
+.main-section__play-again-btn {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+}
+
+.game-victory {
+  margin: 40px auto;
+}
+
+.game-victory__announcement {
+  color: #E0CA02;
+  text-align: center;
+  font-size: 2.6rem;
+}
+
+.game-victory__ceremony {
+  position: relative;
+}
+
+.game-victory__ceremony-capital {
+  max-width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  border: 1px dotted grey;
+  background-image: url("../images/the-capital-860px.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
 }

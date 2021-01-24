@@ -278,12 +278,9 @@
 	// Instructions button
 	&__button {
 		position: fixed;
-		bottom: 0;
+		bottom: 5px;
 		right: 50px;
 		z-index: 2000;
-		background-color: $col-background;
-		// border-color: darken($col-copy, 50%);
-		border-color: $col-highlight;
 		margin-left: 10px;
 	}
 	&__board-spaces {

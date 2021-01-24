@@ -37,3 +37,14 @@ export function battleCard(game) {
         }, 50);
     });
 }
+
+// Animate winner
+export function winner(container) {
+    // Animate avatar repeatedly
+    container.animate({left: '+=400px'}, 4000, function() {
+        container.animate({left: '300px'}, 4000);
+        winner(container);
+    });
+    
+    
+}

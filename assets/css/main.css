@@ -577,11 +577,22 @@ body ul {
   position: relative;
 }
 
-.game-victory__ceremony-capital {
-  max-width: 600px;
+.game-victory__ceremony-winner {
+  position: absolute;
+  width: 200px;
   height: 600px;
+  left: 300px;
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  background-size: contain;
+}
+
+.game-victory__ceremony-capital {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  left: 300px;
   margin: 0 auto;
-  border: 1px dotted grey;
   background-image: url("../images/the-capital-860px.png");
   background-repeat: no-repeat;
   background-position: center bottom;

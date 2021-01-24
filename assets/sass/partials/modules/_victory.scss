@@ -21,13 +21,21 @@
         position: relative;
 
         &-winner {
-
+            position: absolute;
+            width: 200px;
+            height: 600px;
+            left: 300px;
+            background-repeat: no-repeat;
+            background-position: center 30%;
+            background-size: contain;
         }
         &-capital {
-            max-width: 600px;
+            position: absolute;
+            width: 600px;
             height: 600px;
+            left: 300px;
             margin: 0 auto;
-            border: 1px dotted grey;
+            
             background-image: url('../images/the-capital-860px.png');
             background-repeat: no-repeat;
             background-position: center bottom;

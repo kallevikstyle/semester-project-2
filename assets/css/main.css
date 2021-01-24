@@ -226,17 +226,24 @@ body ul {
 .gameboard__token {
   position: absolute;
   z-index: 1000;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+  margin-top: -25px;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom;
 }
 
 .gameboard__token--player1 {
-  background-color: lime;
+  background-image: url("../images/token1.png");
+  margin-left: -10px;
+  transform: rotate(-20deg);
 }
 
 .gameboard__token--player2 {
-  background-color: lightcoral;
+  background-image: url("../images/token2.png");
+  margin-left: 10px;
+  transform: rotate(20deg);
 }
 
 .gameboard__space-container {

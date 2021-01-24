@@ -50,10 +50,12 @@ body {
 }
 .btn-warning {
     background-color: $col-highlight;
-}
-.btn-light {
-    background-color: $col-highlight;
-    border: none;
+
+    &:hover,
+    &:active {
+        background-color: $col-background;
+        color: $col-highlight;
+    }
 }
 .close-button {
     color: $col-warning;

@@ -63,9 +63,9 @@ body ul {
   background-color: #E0CA02;
 }
 
-.btn-light {
-  background-color: #E0CA02;
-  border: none;
+.btn-warning:hover, .btn-warning:active {
+  background-color: #21211E;
+  color: #E0CA02;
 }
 
 .close-button {

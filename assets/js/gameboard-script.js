@@ -19,7 +19,6 @@ if (localStorage.getItem('player1') && localStorage.getItem('player2') && localS
     game.cards = cards;
     // Set up scoreboard
     scoreBoard.setup(game);
-    
     // Dice click event
     game.dice.addEventListener('click', function(event) {
         // Hide narrative

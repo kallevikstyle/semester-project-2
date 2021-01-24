@@ -209,8 +209,20 @@ body ul {
   border-color: #017336;
 }
 
+.character-select__card-container .card--player1::before {
+  content: "Player 1";
+  background-color: #017336;
+  color: #F0F0F0;
+}
+
 .character-select__card-container .card--player2 {
   border-color: #D64A38;
+}
+
+.character-select__card-container .card--player2::before {
+  content: "Player 2";
+  background-color: #D64A38;
+  color: #F0F0F0;
 }
 
 .gameboard {

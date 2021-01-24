@@ -38,9 +38,21 @@
             }
             &--player1 {
                 border-color: $col-success;
+
+                &::before {
+                    content: "Player 1";
+                    background-color: $col-success;
+                    color: $col-copy;
+                }
             }
             &--player2 {
                 border-color: $col-warning;
+
+                &::before {
+                    content: "Player 2";
+                    background-color: $col-warning;
+                    color: $col-copy;
+                }
             }
         }
     }

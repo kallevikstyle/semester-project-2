@@ -28,6 +28,10 @@ export const battleCard = {
             soldiers = this.show(game.cards, game.spaces[game.player1.space].zone);
             game.player1.army += soldiers;
             game.player1.armyChange = true;
+            // Avoid getting a negative army count
+            if (game.player1.army < 0) {
+                game.player1.army = 0;
+            }
             // Update narrative
             game.turn.updateNarrative(game.player1, game.spaces[game.player1.space].zoneText, soldiers);
             // Update timing variable to delay score update
@@ -41,6 +45,10 @@ export const battleCard = {
             soldiers = this.show(game.cards, game.spaces[game.player2.space].zone);
             game.player2.army += soldiers;
             game.player2.armyChange = true;
+            // Avoid getting a negative army count
+            if (game.player2.army < 0) {
+                game.player2.army = 0;
+            }
             // Update narrative
             game.turn.updateNarrative(game.player2, game.spaces[game.player2.space].zoneText, soldiers);
             // Update timing variable to delay score update
